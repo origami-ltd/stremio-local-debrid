@@ -7,6 +7,10 @@
   "resources": ["stream"],
   "types": ["movie", "series", "anime", "other"],
   "catalogs": [],
+  "stremioAddonsConfig": {
+    "issuer": "https://stremio-addons.net",
+    "signature": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..4lO7qF0iZ4JX3SexSWcJIQ.Do_F4wGkJjTJVMjYFGxkkHE0-euzEuJAZqvJGmn31tyqTkRIXicG1ZvJCe7Xa8A_Dh6b_RqMsieWpjyMETLdY5zOZ7f4tfJwEwYDnB1BpkrVdrfnMasK1y2Wt65Rtn3m.CfUOqpItK2uxRBtnKZxisw"
+  },
   "behaviorHints": {
     "configurable": true,
     "configurationRequired": true,
