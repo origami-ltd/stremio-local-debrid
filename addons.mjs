@@ -9,7 +9,7 @@ const streamResources = manifest => (manifest.resources || []).filter(resource =
 
 export async function readStremioProfile(directory = join(homedir(), 'Library', 'WebKit', 'com.westbridge.stremio5-mac', 'WebsiteData', 'Default')) {
   let paths;
-  try { paths = (await readdir(directory, { recursive: true })).filter(path => path.endsWith('LocalStorage/localstorage.sqlite3')); }
+  try { paths = (await readdir(directory, { recursive: true })).filter(path => path.endsWith(join('LocalStorage', 'localstorage.sqlite3'))); }
   catch (error) { if (error.code === 'ENOENT') return null; throw error; }
   const files = await Promise.all(paths.map(async path => ({ path: join(directory, path), modified: (await stat(join(directory, path))).mtimeMs })));
   for (const file of files.sort((a, b) => b.modified - a.modified)) {

@@ -117,7 +117,7 @@ test('sincroniza todos os addons, preserva configuração, filtra streams e acom
     assert.ok(!publicStatus.includes('private-config') && !publicStatus.includes('test-session'));
     const snapshot = await readFile(join(config.stateDir, 'installed-addons.json'), 'utf8');
     assert.ok(!snapshot.includes('test-session'));
-    assert.equal((await stat(join(config.stateDir, 'installed-addons.json'))).mode & 0o777, 0o600);
+    if (process.platform !== 'win32') assert.equal((await stat(join(config.stateDir, 'installed-addons.json'))).mode & 0o777, 0o600);
     installed = [second, ...ignored];
     await waitFor(() => !service.addonSources.status().sources.some(source => source.name === 'Configured'));
     requests.length = 0;
