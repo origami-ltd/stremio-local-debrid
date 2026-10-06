@@ -20,7 +20,7 @@ async function render() {
     const body = Object.assign(document.createElement('p'), { textContent: text.body });
     section.append(heading, body);
     if (key === 'setup') {
-      for (const command of ['git clone https://github.com/origami-ltd/stremio-local-debrid.git\ncd stremio-local-debrid\nnpm ci\nnpm run install:service', 'npm run setup\nnpm start']) {
+      for (const command of ['git clone https://github.com/origami-ltd/stremio-local-debrid.git\ncd stremio-local-debrid\nnpm ci\nnpm run setup', 'npm run setup -- --no-service\nnpm start']) {
         const pre = document.createElement('pre');
         pre.append(Object.assign(document.createElement('code'), { textContent: command }));
         section.append(pre);

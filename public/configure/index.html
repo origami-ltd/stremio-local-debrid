@@ -17,7 +17,8 @@
   <main id="guide"><h2>Why this exists</h2><p>A slow TV can struggle to download torrents and play video at the same time. This addon moves torrent downloading and storage to a computer on your home network. Install the server locally, then connect Stremio on the TV to it.</p><pre><code>git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service</code></pre><p>On Linux or Windows, use <code>npm run setup</code>, configure your addon URLs in <code>config.json</code>, then run <code>npm start</code>.</p></main>
+npm run setup</code></pre><p>The setup wizard generates your private config.json and offers automatic startup on macOS, Linux and Windows. On macOS, sign in to Stremio 5 with the TV's account; on Linux and Windows, enter addon URLs in the wizard. To configure a server that runs in a terminal, use:</p><pre><code>npm run setup -- --no-service
+npm start</code></pre></main>
   <footer><a href="https://github.com/origami-ltd/stremio-local-debrid">GitHub · Origami</a> · <a href="https://github.com/origami-ltd/stremio-local-debrid/blob/main/LICENSE.md">MIT-PoU</a> · <a href="https://github.com/origami-ltd/stremio-local-debrid/issues">Issues</a></footer>
 </body>
 </html>
