@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, stat, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -13,6 +13,38 @@ export function runtimeDirectory(platform = process.platform, home = homedir(), 
   if (platform === 'win32') return join(environment.LOCALAPPDATA || join(home, 'AppData', 'Local'), 'StremioLocalDebrid');
   if (platform === 'linux') return join(environment.XDG_DATA_HOME || join(home, '.local', 'share'), 'stremio-local-debrid');
   throw new Error(`Automatic startup is unsupported on ${platform}.`);
+}
+
+export async function stopStartup(runtime, options = {}) {
+  const platform = options.platform || process.platform;
+  const home = options.home || homedir();
+  const environment = options.environment || process.env;
+  const execute = options.execute || ((file, args) => execFileSync(file, args, { stdio: 'pipe', windowsHide: true }));
+  if (platform === 'darwin') {
+    const service = `gui/${options.uid ?? process.getuid()}/local.stremio.cache`;
+    try { execute('launchctl', ['print', service]); } catch { return; }
+    execute('launchctl', ['bootout', service]);
+  } else if (platform === 'linux') {
+    const unit = join(environment.XDG_CONFIG_HOME || join(home, '.config'), 'systemd', 'user', 'stremio-local-debrid.service');
+    try { await stat(unit); } catch (error) { if (error.code === 'ENOENT') return; throw error; }
+    execute('systemctl', ['--user', 'stop', 'stremio-local-debrid.service']);
+  } else if (platform === 'win32') {
+    const script = join(runtime, 'stop-startup.ps1');
+    await writeFile(script, `$ErrorActionPreference = 'Stop'
+$task = Get-ScheduledTask -TaskName 'Stremio Local Debrid' -ErrorAction SilentlyContinue
+if ($task) {
+  $task | Stop-ScheduledTask
+  for ($attempt = 0; $attempt -lt 50; $attempt++) {
+    if ((Get-ScheduledTask -TaskName 'Stremio Local Debrid').State -ne 'Running') { break }
+    Start-Sleep -Milliseconds 300
+  }
+  if ((Get-ScheduledTask -TaskName 'Stremio Local Debrid').State -eq 'Running') { throw 'The existing server task did not stop.' }
+}
+`);
+    execute('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', script]);
+  } else {
+    throw new Error(`Automatic startup is unsupported on ${platform}.`);
+  }
 }
 
 export async function installStartup(runtime, options = {}) {

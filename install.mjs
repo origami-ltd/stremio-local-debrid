@@ -3,12 +3,13 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 import { prepareConfig } from './setup.mjs';
-import { installStartup, runtimeDirectory } from './startup.mjs';
+import { installStartup, stopStartup, runtimeDirectory } from './startup.mjs';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 const runtime = runtimeDirectory();
 const config = await prepareConfig(root, join(runtime, 'state'));
 await mkdir(runtime, { recursive: true, mode: 0o700 });
+await stopStartup(runtime);
 for (const file of ['server.mjs', 'addons.mjs', 'torrents.mjs', 'i18n.mjs', 'ui.mjs', 'locales', 'public/assets', 'package.json', 'package-lock.json', 'node_modules']) await cp(join(root, file), join(runtime, file), { recursive: true });
 await writeFile(join(runtime, 'config.json'), JSON.stringify(config, null, 2) + '\n', { mode: 0o600 });
 await mkdir(join(root, 'state'), { recursive: true, mode: 0o700 });

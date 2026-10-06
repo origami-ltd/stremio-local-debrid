@@ -4,7 +4,7 @@ import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
-import { installStartup } from '../startup.mjs';
+import { installStartup, stopStartup } from '../startup.mjs';
 
 assert.equal(process.platform, 'win32');
 assert.equal(process.env.GITHUB_ACTIONS, 'true', 'This native registration check is restricted to disposable CI runners.');
@@ -29,6 +29,7 @@ try {
   assert.ok(started, 'Task Scheduler must actually start the Node.js process.');
   console.log('Native Windows Task Scheduler registered the login task and started the Node.js process.');
 } finally {
+  await stopStartup(runtime);
   execute("$t = Get-ScheduledTask -TaskName 'Stremio Local Debrid' -ErrorAction SilentlyContinue; if ($t) { $t | Stop-ScheduledTask; $t | Unregister-ScheduledTask -Confirm:$false }");
   await rm(runtime, { recursive: true, force: true, maxRetries: 20, retryDelay: 250 });
 }
