@@ -86,7 +86,7 @@ sequenceDiagram
     TV->>PC: Play selected source over HTTP
     PC->>Peers: Download selected torrent file
     PC-->>TV: Stream downloaded pieces with HTTP byte ranges
-    Note over PC: Download continues; later plays reuse the cache
+    Note over PC: Download continues and later plays reuse the cache
 ```
 
 On macOS, the server reads the existing Stremio 5 profile and synchronizes its addon collection with Stremio's official API every **60 seconds**, including installs and removals made from the TV. Configured URLs retain their options and query parameters. The last known collection is stored privately and reused when synchronization is unavailable. The session key is not copied to disk. The manual `sources` list is a fallback until an account collection is available; it is not merged into that collection.

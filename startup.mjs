@@ -24,6 +24,11 @@ export async function stopStartup(runtime, options = {}) {
     const service = `gui/${options.uid ?? process.getuid()}/local.stremio.cache`;
     try { execute('launchctl', ['print', service]); } catch { return; }
     execute('launchctl', ['bootout', service]);
+    for (let attempt = 0; attempt < 50; attempt++) {
+      try { execute('launchctl', ['print', service]); } catch { return; }
+      await delay(200);
+    }
+    throw new Error('The existing LaunchAgent did not unload.');
   } else if (platform === 'linux') {
     const unit = join(environment.XDG_CONFIG_HOME || join(home, '.config'), 'systemd', 'user', 'stremio-local-debrid.service');
     try { await stat(unit); } catch (error) { if (error.code === 'ENOENT') return; throw error; }
@@ -78,7 +83,7 @@ export async function installStartup(runtime, options = {}) {
         catch (error) { if (attempt === 3) throw error; await delay(1000); }
       }
     }
-    execute('launchctl', ['kickstart', '-k', `${domain}/local.stremio.cache`]);
+    if (registered) execute('launchctl', ['kickstart', '-k', `${domain}/local.stremio.cache`]);
     return plist;
   }
   if (platform === 'linux') {

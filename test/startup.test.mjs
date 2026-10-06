@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execFileSync } from 'node:child_process';
 import { prepareConfig } from '../setup.mjs';
-import { installStartup, runtimeDirectory } from '../startup.mjs';
+import { installStartup, stopStartup, runtimeDirectory } from '../startup.mjs';
 
 test('setup generates private URLs and preserves existing identity, configuration and runtime state', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'stremio-setup-'));
@@ -38,7 +38,12 @@ test('platform startup files safely handle spaces, quotes and systemd specifiers
     const plist = await readFile(mac, 'utf8');
     assert.ok(plist.includes('&amp;'));
     assert.ok(plist.includes('&apos;'));
-    assert.deepEqual(calls.at(-1), { file: 'launchctl', args: ['kickstart', '-k', 'gui/123/local.stremio.cache'] });
+    assert.deepEqual(calls.at(-1), { file: 'launchctl', args: ['bootstrap', 'gui/123', mac] });
+    let checks = 0;
+    const shutdown = [];
+    await stopStartup(runtime, { ...options, platform: 'darwin', execute: (file, args) => { shutdown.push({ file, args }); if (args[0] === 'print' && ++checks === 3) throw new Error('unloaded'); } });
+    assert.equal(checks, 3);
+    assert.deepEqual(shutdown[1], { file: 'launchctl', args: ['bootout', 'gui/123/local.stremio.cache'] });
     const linux = await installStartup(runtime, { ...options, platform: 'linux' });
     const unit = await readFile(linux, 'utf8');
     assert.ok(unit.includes('100%% ready'));
