@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Instalacja serwera",
-      "body": "Na macOS zaloguj się w Stremio 5 kontem telewizora. Na Linux lub Windows uruchom npm run setup, dodaj skonfigurowane adresy manifestów do sources w config.json i ustaw autoDiscoverAddons na false. Na każdym z trzech systemów uruchom npm run install:service. Serwer startuje i jest uruchamiany automatycznie po zalogowaniu przez LaunchAgent, systemd lub Harmonogram zadań. Stremio może pozostać zamknięte."
+      "body": "Uruchom npm run setup, aby utworzyć config.json i skonfigurować uruchamianie w macOS, Linux lub Windows. W macOS zaloguj się do Stremio 5 kontem telewizora; w Linux/Windows wpisz adresy URL dodatków w kreatorze. --yes akceptuje ustawienia domyślne, --no-service zapisuje tylko konfigurację, a --lang wybiera język. Istniejące tokeny i pobrane pliki zostają zachowane."
     },
     "connect": {
       "title": "Podłączenie telewizora",
@@ -56,5 +56,27 @@
     "noDisk": "Za mało wolnego miejsca na dysku.",
     "notFound": "Nie znaleziono.",
     "invalidMethod": "Nieprawidłowa metoda."
+  },
+  "cli": {
+    "intro": "Enter zachowuje proponowaną wartość. Ctrl+C anuluje przed zapisaniem.",
+    "port": "Port (1–65535)",
+    "address": "Adres komputera dostępny z telewizora (HTTP/HTTPS)",
+    "cache": "Folder pamięci podręcznej",
+    "budget": "Limit pamięci podręcznej (GiB)",
+    "reserve": "Zarezerwowane wolne miejsce (GiB)",
+    "discover": "Wykrywać dodatki ze Stremio 5 na tym Macu",
+    "keepAddons": "Zachować zapisane dodatki",
+    "addons": "Wpisuj skonfigurowane adresy URL dodatków pojedynczo. Pusta odpowiedź kończy listę. Te adresy pozostają prywatne.",
+    "addon": "URL manifestu dodatku",
+    "startup": "Uruchomić teraz i automatycznie przy logowaniu",
+    "yes": "Tak",
+    "no": "Nie",
+    "invalid": "Nieprawidłowa wartość. Spróbuj ponownie.",
+    "saved": "Konfiguracja zapisana",
+    "ready": "Serwer gotowy",
+    "cancelled": "Konfiguracja anulowana",
+    "connect": "Otwórz adres z status-url.txt i wybierz Zainstaluj w Stremio.",
+    "help": "Uruchom npm run setup, aby utworzyć config.json i skonfigurować uruchamianie w macOS, Linux lub Windows. W macOS zaloguj się do Stremio 5 kontem telewizora; w Linux/Windows wpisz adresy URL dodatków w kreatorze. --yes akceptuje ustawienia domyślne, --no-service zapisuje tylko konfigurację, a --lang wybiera język. Istniejące tokeny i pobrane pliki zostają zachowane.",
+    "nonInteractive": "Użyj terminala do konfiguracji interaktywnej lub --yes, aby zaakceptować ustawienia domyślne."
   }
 }

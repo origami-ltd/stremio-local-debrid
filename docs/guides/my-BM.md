@@ -16,17 +16,17 @@ Node.js 24 သို့မဟုတ် အသစ်၊ လုံလောက်�
 
 ## ဆာဗာတပ်ဆင်ခြင်း
 
-macOS တွင် တီဗီနှင့်အကောင့်တူဖြင့် Stremio 5 သို့ဝင်ပါ။ Linux သို့မဟုတ် Windows တွင် npm run setup လုပ်ပါ၊ ဆက်တင်ပြုလုပ်ထားသော addon ၏ manifest URL ကို config.json ရှိ sources ထဲထည့်ပြီး autoDiscoverAddons ကို false လုပ်ပါ။ စနစ်သုံးမျိုးလုံးတွင် npm run install:service က ဆာဗာစပြီး login အချိန်အလိုအလျောက်စရန် LaunchAgent၊ systemd အသုံးပြုသူဝန်ဆောင်မှု သို့မဟုတ် Task Scheduler တွင် မှတ်ပုံတင်သည်။ Stremio ကိုပိတ်ထားနိုင်သည်။ သီးသန့် config.json ကို မထုတ်ပြန်ပါနှင့်။
+config.json ဖန်တီးပြီး macOS၊ Linux သို့မဟုတ် Windows တွင် စတင်ခြင်းကို ပြင်ဆင်ရန် npm run setup ကို လုပ်ဆောင်ပါ။ macOS တွင် TV အကောင့်ဖြင့် Stremio 5 သို့ ဝင်ပါ။ Linux/Windows တွင် လမ်းညွှန်၌ addon URL များ ထည့်ပါ။ --yes သည် မူလတန်ဖိုးများကို လက်ခံသည်၊ --no-service သည် ပြင်ဆင်မှုကိုသာ သိမ်းသည်၊ --lang သည် ဘာသာစကားကို ရွေးသည်။ ရှိပြီးသား token နှင့် download များကို ထိန်းထားသည်။
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

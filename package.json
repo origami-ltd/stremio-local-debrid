@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.mjs",
-    "setup": "node setup.mjs",
+    "setup": "node cli.mjs",
     "install:service": "node install.mjs",
     "install:mac": "node install.mjs",
     "uninstall:service": "node uninstall.mjs",

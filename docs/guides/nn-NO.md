@@ -16,17 +16,17 @@ Bruk Node.js 24 eller nyare, ledig diskplass og ei datamaskin og ein TV som når
 
 ## Installer tenaren
 
-Logg inn i Stremio 5 på macOS med TV-kontoen. Køyr npm run setup på Linux eller Windows, legg konfigurerte manifestadresser til sources i config.json og set autoDiscoverAddons til false. Køyr npm run install:service på alle tre systema. Tenaren startar og får automatisk oppstart ved innlogging med LaunchAgent, systemd eller Oppgåveplanlegging. Stremio kan vere lukka.
+Køyr npm run setup for å lage config.json og setje opp oppstart på macOS, Linux eller Windows. Logg inn i Stremio 5 på macOS med TV-kontoen; skriv tilleggsadressene i vegvisaren på Linux/Windows. --yes godtek standardverdiane, --no-service lagrar berre konfigurasjonen, og --lang vel språk. Eksisterande token og nedlastingar vert tekne vare på.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

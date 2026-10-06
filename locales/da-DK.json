@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Installer serveren",
-      "body": "Log ind i Stremio 5 på macOS med TV'ets konto. På Linux eller Windows køres npm run setup; tilføj konfigurerede manifest-URL'er til sources i config.json, og sæt autoDiscoverAddons til false. Kør npm run install:service på alle tre systemer. Serveren starter og registreres til automatisk opstart ved login via LaunchAgent, systemd eller Opgavestyring. Stremio kan være lukket."
+      "body": "Kør npm run setup for at oprette config.json og konfigurere opstart på macOS, Linux eller Windows. Log ind i Stremio 5 på macOS med TV'ets konto; indtast addon-URL'er i guiden på Linux/Windows. --yes accepterer standardværdier, --no-service gemmer kun konfigurationen, og --lang vælger sprog. Eksisterende tokens og downloads bevares."
     },
     "connect": {
       "title": "Tilslut TV'et",
@@ -56,5 +56,27 @@
     "noDisk": "For lidt ledig diskplads.",
     "notFound": "Ikke fundet.",
     "invalidMethod": "Ugyldig metode."
+  },
+  "cli": {
+    "intro": "Enter beholder den foreslåede værdi. Ctrl+C annullerer før lagring.",
+    "port": "Port (1–65535)",
+    "address": "Computeradresse som TV'et kan nå (HTTP/HTTPS)",
+    "cache": "Cachemappe",
+    "budget": "Cachegrænse (GiB)",
+    "reserve": "Reserveret ledig plads (GiB)",
+    "discover": "Find addons fra Stremio 5 på denne Mac",
+    "keepAddons": "Behold gemte addons",
+    "addons": "Indtast de konfigurerede addon-URL'er én ad gangen. Et tomt svar afslutter. Adresserne forbliver private.",
+    "addon": "URL til addon-manifest",
+    "startup": "Start nu og automatisk ved login",
+    "yes": "Ja",
+    "no": "Nej",
+    "invalid": "Ugyldig værdi. Prøv igen.",
+    "saved": "Konfiguration gemt",
+    "ready": "Server klar",
+    "cancelled": "Opsætning annulleret",
+    "connect": "Åbn adressen i status-url.txt og vælg Installer i Stremio.",
+    "help": "Kør npm run setup for at oprette config.json og konfigurere opstart på macOS, Linux eller Windows. Log ind i Stremio 5 på macOS med TV'ets konto; indtast addon-URL'er i guiden på Linux/Windows. --yes accepterer standardværdier, --no-service gemmer kun konfigurationen, og --lang vælger sprog. Eksisterende tokens og downloads bevares.",
+    "nonInteractive": "Brug en terminal til interaktiv opsætning eller --yes for at acceptere standardværdier."
   }
 }

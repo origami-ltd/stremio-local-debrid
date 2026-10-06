@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Palvelimen asennus",
-      "body": "Kirjaudu macOS:n Stremio 5:een television tilillä. Suorita Linuxissa tai Windowsissa npm run setup, lisää määritetyt manifest-osoitteet config.json-tiedoston sources-kohtaan ja aseta autoDiscoverAddons arvoksi false. Suorita kaikissa kolmessa järjestelmässä npm run install:service. Palvelin käynnistyy ja käynnistetään jatkossa kirjautumisen yhteydessä LaunchAgentin, systemd:n tai Tehtävien ajoituksen avulla. Stremio voi olla suljettuna."
+      "body": "Luo config.json ja määritä käynnistys macOS-, Linux- tai Windows-järjestelmässä komennolla npm run setup. Kirjaudu macOS:n Stremio 5:een TV:n tilillä; syötä Linuxissa/Windowsissa lisäosien URL-osoitteet ohjattuun asennukseen. --yes hyväksyy oletukset, --no-service tallentaa vain asetukset ja --lang valitsee kielen. Nykyiset tunnisteet ja lataukset säilyvät."
     },
     "connect": {
       "title": "Television yhdistäminen",
@@ -56,5 +56,27 @@
     "noDisk": "Vapaa levytila ei riitä.",
     "notFound": "Ei löytynyt.",
     "invalidMethod": "Virheellinen menetelmä."
+  },
+  "cli": {
+    "intro": "Enter säilyttää ehdotetun arvon. Ctrl+C peruuttaa ennen tallennusta.",
+    "port": "Portti (1–65535)",
+    "address": "Tietokoneen osoite, johon TV voi yhdistää (HTTP/HTTPS)",
+    "cache": "Välimuistikansio",
+    "budget": "Välimuistin raja (GiB)",
+    "reserve": "Varattu vapaa tila (GiB)",
+    "discover": "Etsi Stremio 5:n lisäosat tällä Macilla",
+    "keepAddons": "Säilytä tallennetut lisäosat",
+    "addons": "Syötä määritetyt lisäosien URL-osoitteet yksi kerrallaan. Tyhjä vastaus lopettaa. Osoitteet pysyvät yksityisinä.",
+    "addon": "Lisäosan manifestin URL",
+    "startup": "Käynnistä nyt ja automaattisesti kirjautuessa",
+    "yes": "Kyllä",
+    "no": "Ei",
+    "invalid": "Virheellinen arvo. Yritä uudelleen.",
+    "saved": "Asetukset tallennettu",
+    "ready": "Palvelin valmis",
+    "cancelled": "Asennus peruutettu",
+    "connect": "Avaa status-url.txt-tiedoston osoite ja valitse Asenna Stremioon.",
+    "help": "Luo config.json ja määritä käynnistys macOS-, Linux- tai Windows-järjestelmässä komennolla npm run setup. Kirjaudu macOS:n Stremio 5:een TV:n tilillä; syötä Linuxissa/Windowsissa lisäosien URL-osoitteet ohjattuun asennukseen. --yes hyväksyy oletukset, --no-service tallentaa vain asetukset ja --lang valitsee kielen. Nykyiset tunnisteet ja lataukset säilyvät.",
+    "nonInteractive": "Käytä päätettä vuorovaikutteiseen asennukseen tai --yes hyväksyäksesi oletukset."
   }
 }

@@ -16,17 +16,17 @@ Node.js 24 edo berriagoa, diskoan leku librea eta sare berean elkarri iristeko g
 
 ## Zerbitzaria instalatu
 
-macOS-en hasi saioa Stremio 5-en telebistaren kontuarekin. Linux edo Windows-en exekutatu npm run setup, gehitu konfiguratutako manifest URL-ak config.json-eko sources zerrendara eta ezarri autoDiscoverAddons false gisa. Hiru sistemetan exekutatu npm run install:service. Zerbitzaria abiatzen da eta saioa hastean automatikoki abiatuko da LaunchAgent, systemd edo Ataza-antolatzailearen bidez. Stremio itxita egon daiteke.
+Exekutatu npm run setup config.json sortzeko eta macOS, Linux edo Windowsen abioa konfiguratzeko. macOSen, hasi saioa Stremio 5en telebistako kontuarekin; Linux/Windowsen, sartu gehigarrien URLak morroian. --yes aukerak lehenetsiak onartzen ditu, --no-service aukerak konfigurazioa bakarrik gordetzen du eta --lang aukerak hizkuntza hautatzen du. Dauden tokenak eta deskargak mantentzen dira.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

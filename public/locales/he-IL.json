@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "הגדרת השרת",
-      "body": "ב־macOS היכנסו ל־Stremio 5 עם חשבון הטלוויזיה. ב־Linux או ב־Windows הריצו npm run setup, הוסיפו כתובות manifest של תוספים מוגדרים ל־sources ב־config.json והגדירו autoDiscoverAddons כ־false. בכל שלוש המערכות, npm run install:service מפעיל את השרת ורושם הפעלה אוטומטית בכניסה, דרך LaunchAgent, שירות משתמש של systemd או Task Scheduler. אפשר לסגור את Stremio. אל תפרסמו את config.json הפרטי."
+      "body": "הריצו npm run setup ליצירת config.json ולהגדרת ההפעלה ב-macOS, Linux או Windows. ב-macOS התחברו ל-Stremio 5 עם חשבון הטלוויזיה; ב-Linux/Windows הזינו באשף את כתובות התוספים. --yes מקבל את ברירות המחדל, --no-service שומר רק את ההגדרות והאפשרות --lang בוחר שפה. האסימונים וההורדות הקיימים נשמרים."
     },
     "connect": {
       "title": "חיבור הטלוויזיה",
@@ -56,5 +56,27 @@
     "noDisk": "אין מספיק מקום פנוי בדיסק.",
     "notFound": "לא נמצא.",
     "invalidMethod": "שיטה לא תקינה."
+  },
+  "cli": {
+    "intro": "Enter שומר את הערך המוצע. Ctrl+C מבטל לפני השמירה.",
+    "port": "פורט (1–65535)",
+    "address": "כתובת המחשב הנגישה מהטלוויזיה (HTTP/HTTPS)",
+    "cache": "תיקיית המטמון",
+    "budget": "מגבלת המטמון (GiB)",
+    "reserve": "שטח פנוי שמור (GiB)",
+    "discover": "גילוי תוספים של Stremio 5 ב-Mac הזה",
+    "keepAddons": "שמירת התוספים הקיימים",
+    "addons": "הזינו את כתובות ה-URL המוגדרות של התוספים אחת בכל פעם. תשובה ריקה מסיימת את הרשימה. הכתובות נשארות פרטיות.",
+    "addon": "כתובת URL של קובץ manifest של התוסף",
+    "startup": "הפעלה כעת ובאופן אוטומטי בעת ההתחברות",
+    "yes": "כן",
+    "no": "לא",
+    "invalid": "ערך לא תקין. נסו שוב.",
+    "saved": "ההגדרות נשמרו",
+    "ready": "השרת מוכן",
+    "cancelled": "ההגדרה בוטלה",
+    "connect": "פתחו את הכתובת ב-status-url.txt ובחרו התקנה ב-Stremio.",
+    "help": "הריצו npm run setup ליצירת config.json ולהגדרת ההפעלה ב-macOS, Linux או Windows. ב-macOS התחברו ל-Stremio 5 עם חשבון הטלוויזיה; ב-Linux/Windows הזינו באשף את כתובות התוספים. --yes מקבל את ברירות המחדל, --no-service שומר רק את ההגדרות והאפשרות --lang בוחר שפה. האסימונים וההורדות הקיימים נשמרים.",
+    "nonInteractive": "השתמשו במסוף להגדרה אינטראקטיבית או באפשרות --yes לקבלת ברירות המחדל."
   }
 }

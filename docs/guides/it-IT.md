@@ -16,17 +16,17 @@ Servono Node.js 24 o successivo, spazio libero su disco e computer e TV raggiung
 
 ## Configurare il server
 
-Su macOS accedi a Stremio 5 con l’account della TV. Su Linux o Windows esegui npm run setup, aggiungi gli URL configurati dei manifest a sources in config.json e imposta autoDiscoverAddons su false. Esegui npm run install:service su tutti e tre i sistemi. L’installer avvia il server e configura l’avvio automatico all’accesso con LaunchAgent, systemd o Utilità di pianificazione. Stremio può rimanere chiuso.
+Esegui npm run setup per generare config.json e configurare l'avvio su macOS, Linux o Windows. Su macOS, accedi a Stremio 5 con l'account della TV; su Linux/Windows, inserisci gli URL degli addon nell'assistente. --yes accetta i valori predefiniti, --no-service salva solo la configurazione e --lang sceglie la lingua. Token e download esistenti vengono conservati.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

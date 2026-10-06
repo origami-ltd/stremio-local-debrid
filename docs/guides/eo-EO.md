@@ -16,17 +16,17 @@ Uzu Node.js 24 aŭ pli novan, liberan diskospacon kaj komputilon kaj televidilon
 
 ## Instali la servilon
 
-En macOS ensalutu al Stremio 5 per la televidila konto. En Linux aŭ Windows rulu npm run setup, aldonu agorditajn manifestajn URL-ojn al sources en config.json kaj agordu autoDiscoverAddons al false. Rulu npm run install:service en ĉiuj tri sistemoj. La servilo ekfunkcias kaj aŭtomate lanĉiĝas ĉe ensaluto per LaunchAgent, systemd aŭ Taskplanilo. Stremio povas resti fermita.
+Rulu npm run setup por krei config.json kaj agordi lanĉon en macOS, Linux aŭ Windows. En macOS, ensalutu en Stremio 5 per la konto de la televidilo; en Linux/Windows, enigu la aldonaĵajn URL-ojn en la asistanto. --yes akceptas defaŭltojn, --no-service nur konservas la agordon, kaj --lang elektas lingvon. Ekzistantaj ĵetonoj kaj elŝutoj estas konservataj.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Serverio diegimas",
-      "body": "macOS sistemoje prisijunkite prie Stremio 5 televizoriaus paskyra. Linux arba Windows paleiskite npm run setup, įrašykite sukonfigūruotus manifestų URL į sources faile config.json ir nustatykite autoDiscoverAddons į false. Visose trijose sistemose paleiskite npm run install:service. Serveris įsijungs ir bus automatiškai paleidžiamas prisijungus per LaunchAgent, systemd arba užduočių planuoklį. Stremio gali likti uždarytas."
+      "body": "Paleiskite npm run setup, kad sukurtumėte config.json ir nustatytumėte paleidimą macOS, Linux arba Windows. macOS prisijunkite prie Stremio 5 TV paskyra; Linux/Windows vedlyje įveskite priedų URL. --yes priima numatytąsias reikšmes, --no-service tik išsaugo konfigūraciją, o --lang pasirenka kalbą. Esami prieigos raktai ir atsisiuntimai išsaugomi."
     },
     "connect": {
       "title": "Televizoriaus prijungimas",
@@ -56,5 +56,27 @@
     "noDisk": "Nepakanka laisvos vietos diske.",
     "notFound": "Nerasta.",
     "invalidMethod": "Netinkamas metodas."
+  },
+  "cli": {
+    "intro": "Enter išsaugo siūlomą reikšmę. Ctrl+C atšaukia prieš išsaugant.",
+    "port": "Prievadas (1–65535)",
+    "address": "Kompiuterio adresas, pasiekiamas iš TV (HTTP/HTTPS)",
+    "cache": "Podėlio aplankas",
+    "budget": "Podėlio riba (GiB)",
+    "reserve": "Rezervuota laisva vieta (GiB)",
+    "discover": "Aptikti Stremio 5 priedus šiame Mac",
+    "keepAddons": "Išsaugoti įrašytus priedus",
+    "addons": "Įveskite sukonfigūruotų priedų URL po vieną. Tuščias atsakymas užbaigia sąrašą. Adresai lieka privatūs.",
+    "addon": "Priedo manifesto URL",
+    "startup": "Paleisti dabar ir automatiškai prisijungus",
+    "yes": "Taip",
+    "no": "Ne",
+    "invalid": "Netinkama reikšmė. Bandykite dar kartą.",
+    "saved": "Konfigūracija išsaugota",
+    "ready": "Serveris paruoštas",
+    "cancelled": "Sąranka atšaukta",
+    "connect": "Atidarykite adresą iš status-url.txt ir pasirinkite Įdiegti į Stremio.",
+    "help": "Paleiskite npm run setup, kad sukurtumėte config.json ir nustatytumėte paleidimą macOS, Linux arba Windows. macOS prisijunkite prie Stremio 5 TV paskyra; Linux/Windows vedlyje įveskite priedų URL. --yes priima numatytąsias reikšmes, --no-service tik išsaugo konfigūraciją, o --lang pasirenka kalbą. Esami prieigos raktai ir atsisiuntimai išsaugomi.",
+    "nonInteractive": "Interaktyviai sąrankai naudokite terminalą arba --yes numatytosioms reikšmėms priimti."
   }
 }

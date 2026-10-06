@@ -16,17 +16,17 @@ Du brauchst Node.js 24 oder neuer, freien Speicher und einen Computer sowie Fern
 
 ## Server einrichten
 
-Melde dich unter macOS in Stremio 5 mit dem Konto des Fernsehers an. Unter Linux oder Windows führst du npm run setup aus, trägst konfigurierte Manifest-URLs in sources in config.json ein und setzt autoDiscoverAddons auf false. Führe auf allen drei Systemen npm run install:service aus. Der Installer startet den Server und richtet den automatischen Start bei der Anmeldung mit LaunchAgent, systemd oder der Aufgabenplanung ein. Stremio darf geschlossen bleiben.
+Führe npm run setup aus, um config.json zu erstellen und den Start unter macOS, Linux oder Windows einzurichten. Melde Stremio 5 unter macOS mit dem TV-Konto an; gib unter Linux/Windows die Addon-URLs im Assistenten ein. --yes übernimmt die Vorgaben, --no-service speichert nur die Konfiguration und --lang wählt die Sprache. Vorhandene Tokens und Downloads bleiben erhalten.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

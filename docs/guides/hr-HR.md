@@ -16,17 +16,17 @@ Potrebni su Node.js 24 ili noviji, slobodan prostor te računalo i televizor dos
 
 ## Instalacija poslužitelja
 
-Na macOS-u prijavite se u Stremio 5 računom televizora. Na Linuxu ili Windowsu pokrenite npm run setup, dodajte konfigurirane URL-ove manifesta u sources u config.json i postavite autoDiscoverAddons na false. Na sva tri sustava pokrenite npm run install:service. Poslužitelj se pokreće i automatski se uključuje pri prijavi putem LaunchAgenta, systemd-a ili Planera zadataka. Stremio može ostati zatvoren.
+Pokrenite npm run setup za izradu config.json i postavljanje pokretanja na macOS-u, Linuxu ili Windowsu. Na macOS-u prijavite se u Stremio 5 računom TV-a; na Linuxu/Windowsu unesite URL-ove dodataka u čarobnjaku. --yes prihvaća zadane vrijednosti, --no-service samo sprema konfiguraciju, a --lang bira jezik. Postojeći tokeni i preuzimanja ostaju sačuvani.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

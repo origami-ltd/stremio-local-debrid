@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Inštalácia servera",
-      "body": "V macOS sa prihláste do Stremio 5 účtom televízora. V Linuxe alebo Windows spustite npm run setup, pridajte nastavené adresy manifestov do sources v config.json a nastavte autoDiscoverAddons na false. Na všetkých troch systémoch spustite npm run install:service. Server sa spustí a nastaví automatický štart pri prihlásení cez LaunchAgent, systemd alebo Plánovač úloh. Stremio môže zostať zatvorené."
+      "body": "Spustite npm run setup na vytvorenie config.json a nastavenie spúšťania v macOS, Linuxe alebo Windows. V macOS sa prihláste do Stremio 5 účtom TV; v Linuxe/Windows zadajte URL doplnkov v sprievodcovi. --yes prijme predvolené hodnoty, --no-service iba uloží konfiguráciu a --lang zvolí jazyk. Existujúce tokeny a stiahnuté súbory zostávajú zachované."
     },
     "connect": {
       "title": "Pripojenie televízora",
@@ -56,5 +56,27 @@
     "noDisk": "Nedostatok voľného miesta na disku.",
     "notFound": "Nenájdené.",
     "invalidMethod": "Neplatná metóda."
+  },
+  "cli": {
+    "intro": "Enter zachová navrhnutú hodnotu. Ctrl+C zruší nastavenie pred uložením.",
+    "port": "Port (1–65535)",
+    "address": "Adresa počítača dostupná z TV (HTTP/HTTPS)",
+    "cache": "Priečinok vyrovnávacej pamäte",
+    "budget": "Limit vyrovnávacej pamäte (GiB)",
+    "reserve": "Vyhradené voľné miesto (GiB)",
+    "discover": "Vyhľadať doplnky Stremio 5 na tomto Macu",
+    "keepAddons": "Ponechať uložené doplnky",
+    "addons": "Zadajte nakonfigurované URL doplnkov po jednej. Prázdna odpoveď ukončí zoznam. Adresy zostávajú súkromné.",
+    "addon": "URL manifestu doplnku",
+    "startup": "Spustiť teraz a automaticky pri prihlásení",
+    "yes": "Áno",
+    "no": "Nie",
+    "invalid": "Neplatná hodnota. Skúste znova.",
+    "saved": "Konfigurácia uložená",
+    "ready": "Server pripravený",
+    "cancelled": "Nastavenie zrušené",
+    "connect": "Otvorte adresu v status-url.txt a vyberte Inštalovať do Stremio.",
+    "help": "Spustite npm run setup na vytvorenie config.json a nastavenie spúšťania v macOS, Linuxe alebo Windows. V macOS sa prihláste do Stremio 5 účtom TV; v Linuxe/Windows zadajte URL doplnkov v sprievodcovi. --yes prijme predvolené hodnoty, --no-service iba uloží konfiguráciu a --lang zvolí jazyk. Existujúce tokeny a stiahnuté súbory zostávajú zachované.",
+    "nonInteractive": "Použite terminál na interaktívne nastavenie alebo --yes na prijatie predvolených hodnôt."
   }
 }

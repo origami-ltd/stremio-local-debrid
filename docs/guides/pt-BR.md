@@ -16,17 +16,17 @@ Use Node.js 24 ou mais recente, espaço livre em disco e computador e TV na mesm
 
 ## Preparar o servidor
 
-No macOS, entre no Stremio 5 do computador com a mesma conta usada na TV. No Linux ou Windows, execute npm run setup, coloque as URLs configuradas dos manifests dos addons em sources no config.json e defina autoDiscoverAddons como false. Depois execute npm run install:service em qualquer um dos três sistemas. O instalador inicia o servidor e registra a inicialização automática ao entrar na sessão: LaunchAgent no macOS, serviço de usuário do systemd no Linux e Agendador de Tarefas no Windows. O Stremio pode ficar fechado. Nunca publique seu config.json privado.
+Execute npm run setup para gerar o config.json e configurar a inicialização no macOS, Linux ou Windows. No macOS, entre no Stremio 5 com a conta da TV; no Linux/Windows, informe as URLs dos addons no assistente. --yes aceita os padrões, --no-service apenas salva a configuração e --lang escolhe o idioma. Tokens e downloads existentes são preservados.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

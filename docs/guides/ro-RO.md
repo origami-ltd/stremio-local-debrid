@@ -16,17 +16,17 @@ Ai nevoie de Node.js 24 sau mai nou, spațiu liber și un calculator și televiz
 
 ## Instalarea serverului
 
-Pe macOS autentifică-te în Stremio 5 cu contul televizorului. Pe Linux sau Windows rulează npm run setup, adaugă URL-urile configurate ale manifestelor în sources din config.json și setează autoDiscoverAddons la false. Rulează npm run install:service pe toate cele trei sisteme. Serverul pornește și este înregistrat pentru pornire automată la autentificare prin LaunchAgent, systemd sau Task Scheduler. Stremio poate rămâne închis.
+Rulați npm run setup pentru a genera config.json și a configura pornirea pe macOS, Linux sau Windows. Pe macOS, conectați Stremio 5 la contul TV-ului; pe Linux/Windows, introduceți URL-urile addonurilor în asistent. --yes acceptă valorile implicite, --no-service salvează doar configurația, iar --lang alege limba. Tokenurile și descărcările existente sunt păstrate.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

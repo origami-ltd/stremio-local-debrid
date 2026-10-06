@@ -16,17 +16,17 @@ Node.js 24 یا جدیدتر، فضای خالی کافی و رایانه و ت�
 
 ## راه‌اندازی سرور
 
-در macOS با حساب تلویزیون وارد Stremio 5 شوید. در Linux یا Windows، npm run setup را اجرا کنید، نشانی manifest افزونه‌های تنظیم‌شده را به sources در config.json اضافه کنید و autoDiscoverAddons را false بگذارید. در هر سه سیستم npm run install:service سرور را شروع و اجرای خودکار هنگام ورود را با LaunchAgent، سرویس کاربر systemd یا Task Scheduler ثبت می‌کند. Stremio می‌تواند بسته باشد. config.json خصوصی را منتشر نکنید.
+برای ساخت config.json و تنظیم اجرای خودکار در macOS، Linux یا Windows، فرمان npm run setup را اجرا کنید. در macOS با حساب تلویزیون وارد Stremio 5 شوید؛ در Linux/Windows نشانی افزونه‌ها را در راهنما وارد کنید. --yes پیش‌فرض‌ها را می‌پذیرد، --no-service فقط پیکربندی را ذخیره می‌کند و --lang زبان را انتخاب می‌کند. توکن‌ها و دانلودهای موجود حفظ می‌شوند.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

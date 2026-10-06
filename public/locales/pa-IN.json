@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "ਸਰਵਰ ਸੈੱਟ ਕਰੋ",
-      "body": "macOS ਉੱਤੇ ਟੀਵੀ ਵਾਲੇ ਖਾਤੇ ਨਾਲ Stremio 5 ਵਿੱਚ ਦਾਖ਼ਲ ਹੋਵੋ। Linux ਜਾਂ Windows ਉੱਤੇ npm run setup ਚਲਾਓ, ਸੈੱਟ ਕੀਤੇ ਐਡਆਨ ਦੇ manifest URL config.json ਦੇ sources ਵਿੱਚ ਪਾਓ ਅਤੇ autoDiscoverAddons ਨੂੰ false ਕਰੋ। ਤਿੰਨਾਂ ਸਿਸਟਮਾਂ ਉੱਤੇ npm run install:service ਸਰਵਰ ਸ਼ੁਰੂ ਕਰਦਾ ਹੈ ਅਤੇ ਲੌਗਇਨ ਸਮੇਂ ਆਟੋਮੈਟਿਕ ਚਾਲੂ ਹੋਣਾ ਦਰਜ ਕਰਦਾ ਹੈ: LaunchAgent, systemd ਯੂਜ਼ਰ ਸੇਵਾ ਜਾਂ Task Scheduler। Stremio ਬੰਦ ਰਹਿ ਸਕਦਾ ਹੈ। ਨਿੱਜੀ config.json ਪ੍ਰਕਾਸ਼ਿਤ ਨਾ ਕਰੋ।"
+      "body": "config.json ਬਣਾਉਣ ਅਤੇ macOS, Linux ਜਾਂ Windows ਉੱਤੇ ਸ਼ੁਰੂਆਤ ਸੰਰਚਿਤ ਕਰਨ ਲਈ npm run setup ਚਲਾਓ। macOS ਉੱਤੇ TV ਦੇ ਖਾਤੇ ਨਾਲ Stremio 5 ਵਿੱਚ ਲਾਗਇਨ ਕਰੋ; Linux/Windows ਉੱਤੇ ਵਿਜ਼ਾਰਡ ਵਿੱਚ ਐਡਆਨ URL ਦਰਜ ਕਰੋ। --yes ਮੂਲ ਮੁੱਲ ਮੰਨਦਾ ਹੈ, --no-service ਸਿਰਫ਼ ਸੰਰਚਨਾ ਸੰਭਾਲਦਾ ਹੈ ਅਤੇ --lang ਭਾਸ਼ਾ ਚੁਣਦਾ ਹੈ। ਮੌਜੂਦਾ ਟੋਕਨ ਅਤੇ ਡਾਊਨਲੋਡ ਬਚੇ ਰਹਿੰਦੇ ਹਨ।"
     },
     "connect": {
       "title": "ਟੀਵੀ ਜੋੜੋ",
@@ -56,5 +56,27 @@
     "noDisk": "ਡਿਸਕ ਵਿੱਚ ਕਾਫ਼ੀ ਖਾਲੀ ਥਾਂ ਨਹੀਂ।",
     "notFound": "ਨਹੀਂ ਮਿਲਿਆ।",
     "invalidMethod": "ਗਲਤ ਤਰੀਕਾ।"
+  },
+  "cli": {
+    "intro": "Enter ਸੁਝਾਇਆ ਮੁੱਲ ਰੱਖਦਾ ਹੈ। Ctrl+C ਸੰਭਾਲਣ ਤੋਂ ਪਹਿਲਾਂ ਰੱਦ ਕਰਦਾ ਹੈ।",
+    "port": "ਪੋਰਟ (1–65535)",
+    "address": "TV ਤੋਂ ਪਹੁੰਚਯੋਗ ਕੰਪਿਊਟਰ ਦਾ ਪਤਾ (HTTP/HTTPS)",
+    "cache": "ਕੈਸ਼ ਫੋਲਡਰ",
+    "budget": "ਕੈਸ਼ ਹੱਦ (GiB)",
+    "reserve": "ਰਾਖਵੀਂ ਖਾਲੀ ਥਾਂ (GiB)",
+    "discover": "ਇਸ Mac ਉੱਤੇ Stremio 5 ਦੇ ਐਡਆਨ ਲੱਭੋ",
+    "keepAddons": "ਸੰਭਾਲੇ ਐਡਆਨ ਰੱਖੋ",
+    "addons": "ਸੰਰਚਿਤ ਐਡਆਨ URL ਇੱਕ-ਇੱਕ ਕਰਕੇ ਦਰਜ ਕਰੋ। ਖਾਲੀ ਜਵਾਬ ਸੂਚੀ ਖਤਮ ਕਰਦਾ ਹੈ। ਇਹ ਪਤੇ ਨਿੱਜੀ ਰਹਿੰਦੇ ਹਨ।",
+    "addon": "ਐਡਆਨ manifest ਦਾ URL",
+    "startup": "ਹੁਣ ਅਤੇ ਲਾਗਇਨ ਵੇਲੇ ਆਪਣੇ ਆਪ ਚਲਾਓ",
+    "yes": "ਹਾਂ",
+    "no": "ਨਹੀਂ",
+    "invalid": "ਗਲਤ ਮੁੱਲ। ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "saved": "ਸੰਰਚਨਾ ਸੰਭਾਲੀ ਗਈ",
+    "ready": "ਸਰਵਰ ਤਿਆਰ ਹੈ",
+    "cancelled": "ਸੈੱਟਅੱਪ ਰੱਦ ਹੋਇਆ",
+    "connect": "status-url.txt ਦਾ ਪਤਾ ਖੋਲ੍ਹੋ ਅਤੇ Stremio ਵਿੱਚ ਇੰਸਟਾਲ ਕਰੋ ਚੁਣੋ।",
+    "help": "config.json ਬਣਾਉਣ ਅਤੇ macOS, Linux ਜਾਂ Windows ਉੱਤੇ ਸ਼ੁਰੂਆਤ ਸੰਰਚਿਤ ਕਰਨ ਲਈ npm run setup ਚਲਾਓ। macOS ਉੱਤੇ TV ਦੇ ਖਾਤੇ ਨਾਲ Stremio 5 ਵਿੱਚ ਲਾਗਇਨ ਕਰੋ; Linux/Windows ਉੱਤੇ ਵਿਜ਼ਾਰਡ ਵਿੱਚ ਐਡਆਨ URL ਦਰਜ ਕਰੋ। --yes ਮੂਲ ਮੁੱਲ ਮੰਨਦਾ ਹੈ, --no-service ਸਿਰਫ਼ ਸੰਰਚਨਾ ਸੰਭਾਲਦਾ ਹੈ ਅਤੇ --lang ਭਾਸ਼ਾ ਚੁਣਦਾ ਹੈ। ਮੌਜੂਦਾ ਟੋਕਨ ਅਤੇ ਡਾਊਨਲੋਡ ਬਚੇ ਰਹਿੰਦੇ ਹਨ।",
+    "nonInteractive": "ਇੰਟਰਐਕਟਿਵ ਸੈੱਟਅੱਪ ਲਈ ਟਰਮੀਨਲ ਵਰਤੋ ਜਾਂ ਮੂਲ ਮੁੱਲ ਮੰਨਣ ਲਈ --yes ਦਿਓ।"
   }
 }

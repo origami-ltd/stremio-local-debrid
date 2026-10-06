@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Sunucuyu kurma",
-      "body": "macOS'ta Stremio 5'e televizyon hesabıyla giriş yapın. Linux veya Windows'ta npm run setup çalıştırın, yapılandırılmış manifest URL'lerini config.json içindeki sources alanına ekleyin ve autoDiscoverAddons değerini false yapın. Üç sistemde de npm run install:service çalıştırın. Sunucu başlar ve LaunchAgent, systemd veya Görev Zamanlayıcı ile oturum açıldığında otomatik başlar. Stremio kapalı kalabilir."
+      "body": "config.json oluşturmak ve macOS, Linux veya Windows'ta başlangıcı ayarlamak için npm run setup çalıştırın. macOS'ta Stremio 5'e TV hesabıyla giriş yapın; Linux/Windows'ta eklenti URL'lerini sihirbaza girin. --yes varsayılanları kabul eder, --no-service yalnızca yapılandırmayı kaydeder ve --lang dili seçer. Mevcut belirteçler ve indirmeler korunur."
     },
     "connect": {
       "title": "Televizyonu bağlama",
@@ -56,5 +56,27 @@
     "noDisk": "Yetersiz boş disk alanı.",
     "notFound": "Bulunamadı.",
     "invalidMethod": "Geçersiz yöntem."
+  },
+  "cli": {
+    "intro": "Enter önerilen değeri korur. Ctrl+C kaydetmeden iptal eder.",
+    "port": "Port (1–65535)",
+    "address": "TV'den erişilebilen bilgisayar adresi (HTTP/HTTPS)",
+    "cache": "Önbellek klasörü",
+    "budget": "Önbellek sınırı (GiB)",
+    "reserve": "Ayrılan boş alan (GiB)",
+    "discover": "Bu Mac'teki Stremio 5 eklentilerini keşfet",
+    "keepAddons": "Kayıtlı eklentileri koru",
+    "addons": "Yapılandırılmış eklenti URL'lerini tek tek girin. Boş yanıt listeyi bitirir. Adresler gizli kalır.",
+    "addon": "Eklenti manifest URL'si",
+    "startup": "Şimdi ve oturum açıldığında otomatik başlat",
+    "yes": "Evet",
+    "no": "Hayır",
+    "invalid": "Geçersiz değer. Tekrar deneyin.",
+    "saved": "Yapılandırma kaydedildi",
+    "ready": "Sunucu hazır",
+    "cancelled": "Kurulum iptal edildi",
+    "connect": "status-url.txt içindeki adresi açın ve Stremio'ya Yükle'yi seçin.",
+    "help": "config.json oluşturmak ve macOS, Linux veya Windows'ta başlangıcı ayarlamak için npm run setup çalıştırın. macOS'ta Stremio 5'e TV hesabıyla giriş yapın; Linux/Windows'ta eklenti URL'lerini sihirbaza girin. --yes varsayılanları kabul eder, --no-service yalnızca yapılandırmayı kaydeder ve --lang dili seçer. Mevcut belirteçler ve indirmeler korunur.",
+    "nonInteractive": "Etkileşimli kurulum için terminal kullanın veya varsayılanlar için --yes ekleyin."
   }
 }

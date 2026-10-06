@@ -16,17 +16,17 @@
 
 ## Инсталација на серверот
 
-На macOS најавете се во Stremio 5 со сметката на телевизорот. На Linux или Windows извршете npm run setup, додајте ги конфигурираните URL адреси на manifest во sources во config.json и поставете autoDiscoverAddons: false. На трите системи извршете npm run install:service. Серверот стартува и автоматски се вклучува при најава преку LaunchAgent, systemd или Распоредувачот на задачи. Stremio може да биде затворен.
+Извршете npm run setup за да создадете config.json и да го поставите стартувањето на macOS, Linux или Windows. На macOS, најавете се во Stremio 5 со сметката на ТВ; на Linux/Windows, внесете ги URL-адресите на додатоците во волшебникот. --yes ги прифаќа стандардните вредности, --no-service само ја зачувува конфигурацијата, а --lang избира јазик. Постојните токени и преземања се зачувуваат.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

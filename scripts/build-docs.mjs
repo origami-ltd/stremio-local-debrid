@@ -9,7 +9,7 @@ for (const [code, t] of Object.entries(locales)) {
   let guide = `# Stremio Local Debrid — ${t.localeName}\n\n${t.description}\n\n`;
   for (const [key, section] of Object.entries(t.guide)) {
     guide += `## ${section.title}\n\n${section.body}\n\n`;
-    if (key === 'setup') guide += '```sh\ngit clone https://github.com/origami-ltd/stremio-local-debrid.git\ncd stremio-local-debrid\nnpm ci\nnpm run install:service\n```\n\n```sh\nnpm run setup\nnpm start\n```\n\n';
+    if (key === 'setup') guide += '```sh\ngit clone https://github.com/origami-ltd/stremio-local-debrid.git\ncd stremio-local-debrid\nnpm ci\nnpm run setup\n```\n\n```sh\nnpm run setup -- --no-service\nnpm start\n```\n\n';
   }
   guide += '[Origami · GitHub](https://github.com/origami-ltd/stremio-local-debrid) · [MIT-PoU](../../LICENSE.md)\n';
   await writeFile(`docs/guides/${code}.md`, guide);

@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Instal·lar el servidor",
-      "body": "A macOS, inicia sessió a Stremio 5 amb el compte del televisor. A Linux o Windows, executa npm run setup, afegeix els URL configurats dels manifests a sources de config.json i posa autoDiscoverAddons a false. Executa npm run install:service als tres sistemes. El servidor s'inicia i arrenca automàticament en iniciar sessió amb LaunchAgent, systemd o el Planificador de tasques. Stremio pot estar tancat."
+      "body": "Executeu npm run setup per generar config.json i configurar l'inici a macOS, Linux o Windows. A macOS, inicieu sessió a Stremio 5 amb el compte de la TV; a Linux/Windows, introduïu els URL dels complements a l'assistent. --yes accepta els valors predeterminats, --no-service només desa la configuració i --lang tria l'idioma. Es conserven els tokens i les baixades existents."
     },
     "connect": {
       "title": "Connectar el televisor",
@@ -56,5 +56,27 @@
     "noDisk": "Espai lliure insuficient al disc.",
     "notFound": "No s'ha trobat.",
     "invalidMethod": "Mètode no vàlid."
+  },
+  "cli": {
+    "intro": "Enter conserva el valor proposat. Ctrl+C cancel·la abans de desar.",
+    "port": "Port (1–65535)",
+    "address": "Adreça de l'ordinador accessible des de la TV (HTTP/HTTPS)",
+    "cache": "Carpeta de la memòria cau",
+    "budget": "Límit de la memòria cau (GiB)",
+    "reserve": "Espai lliure reservat (GiB)",
+    "discover": "Detectar complements de Stremio 5 en aquest Mac",
+    "keepAddons": "Conservar els complements desats",
+    "addons": "Introduïu els URL configurats dels complements, un per un. Una resposta buida acaba. Aquestes adreces són privades.",
+    "addon": "URL del manifest del complement",
+    "startup": "Iniciar ara i automàticament en iniciar sessió",
+    "yes": "Sí",
+    "no": "No",
+    "invalid": "Valor no vàlid. Torneu-ho a provar.",
+    "saved": "Configuració desada",
+    "ready": "Servidor preparat",
+    "cancelled": "Configuració cancel·lada",
+    "connect": "Obriu l'adreça de status-url.txt i trieu Instal·lar a Stremio.",
+    "help": "Executeu npm run setup per generar config.json i configurar l'inici a macOS, Linux o Windows. A macOS, inicieu sessió a Stremio 5 amb el compte de la TV; a Linux/Windows, introduïu els URL dels complements a l'assistent. --yes accepta els valors predeterminats, --no-service només desa la configuració i --lang tria l'idioma. Es conserven els tokens i les baixades existents.",
+    "nonInteractive": "Feu servir un terminal per a la configuració interactiva o --yes per acceptar els valors predeterminats."
   }
 }

@@ -16,17 +16,17 @@
 
 ## إعداد الخادم
 
-على macOS، سجّل الدخول إلى Stremio 5 بحساب التلفاز نفسه. على Linux أو Windows، شغّل npm run setup وأضف عناوين manifest للإضافات المهيأة إلى sources في config.json، واضبط autoDiscoverAddons على false. شغّل npm run install:service على الأنظمة الثلاثة لبدء الخادم وتسجيل تشغيله عند تسجيل الدخول، عبر LaunchAgent أو خدمة systemd للمستخدم أو Task Scheduler. يمكن إغلاق Stremio. لا تنشر config.json الخاص بك.
+شغّل npm run setup لإنشاء config.json وضبط بدء التشغيل على macOS أو Linux أو Windows. على macOS، سجّل الدخول إلى Stremio 5 بحساب التلفزيون؛ على Linux/Windows، أدخل عناوين الإضافات في المعالج. يقبل --yes القيم الافتراضية، ويحفظ --no-service الإعدادات فقط، ويحدد --lang اللغة. تُحفظ الرموز والتنزيلات الموجودة.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

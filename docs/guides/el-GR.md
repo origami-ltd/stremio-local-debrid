@@ -16,17 +16,17 @@
 
 ## Εγκατάσταση διακομιστή
 
-Στο macOS συνδεθείτε στο Stremio 5 με τον λογαριασμό της τηλεόρασης. Σε Linux ή Windows εκτελέστε npm run setup, προσθέστε τις ρυθμισμένες διευθύνσεις manifest στο sources του config.json και ορίστε autoDiscoverAddons: false. Και στα τρία συστήματα εκτελέστε npm run install:service. Ο διακομιστής ξεκινά και ενεργοποιείται αυτόματα στη σύνδεση με LaunchAgent, systemd ή Χρονοδιάγραμμα εργασιών. Το Stremio μπορεί να παραμείνει κλειστό.
+Εκτελέστε npm run setup για να δημιουργήσετε config.json και να ρυθμίσετε την εκκίνηση σε macOS, Linux ή Windows. Σε macOS, συνδεθείτε στο Stremio 5 με τον λογαριασμό της TV· σε Linux/Windows, εισαγάγετε τα URL των πρόσθετων στον οδηγό. Το --yes δέχεται τις προεπιλογές, το --no-service αποθηκεύει μόνο τη ρύθμιση και το --lang επιλέγει γλώσσα. Τα υπάρχοντα tokens και οι λήψεις διατηρούνται.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

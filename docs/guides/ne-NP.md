@@ -16,17 +16,17 @@ Node.js 24 वा नयाँ, पर्याप्त खाली डिस�
 
 ## सर्भर स्थापना
 
-macOS मा टिभीकै खाताबाट Stremio 5 मा प्रवेश गर्नुहोस्। Linux वा Windows मा npm run setup चलाउनुहोस्, कन्फिगर गरिएका एडअनका manifest URL config.json को sources मा थप्नुहोस् र autoDiscoverAddons लाई false बनाउनुहोस्। तीनै प्रणालीमा npm run install:service ले सर्भर सुरु गर्छ र प्रवेश गर्दा स्वतः चल्ने व्यवस्था गर्छ: LaunchAgent, systemd प्रयोगकर्ता सेवा वा Task Scheduler। Stremio बन्द रहन सक्छ। निजी config.json प्रकाशन नगर्नुहोस्।
+config.json बनाउन र macOS, Linux वा Windows मा सुरुआत कन्फिगर गर्न npm run setup चलाउनुहोस्। macOS मा TV को खाताबाट Stremio 5 मा लगइन गर्नुहोस्; Linux/Windows मा विजार्डमा एडअन URL प्रविष्ट गर्नुहोस्। --yes ले पूर्वनिर्धारित मान स्वीकार गर्छ, --no-service ले कन्फिगरेसन मात्र बचत गर्छ र --lang ले भाषा रोज्छ। भएका टोकन र डाउनलोड सुरक्षित रहन्छन्।
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

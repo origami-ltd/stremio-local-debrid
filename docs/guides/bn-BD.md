@@ -16,17 +16,17 @@ Node.js 24 বা নতুন, পর্যাপ্ত ফাঁকা ডি�
 
 ## সার্ভার তৈরি করুন
 
-macOS-এ টিভির অ্যাকাউন্ট দিয়ে Stremio 5-এ লগইন করুন। Linux বা Windows-এ npm run setup চালিয়ে কনফিগার করা অ্যাডঅনের manifest URL config.json-এর sources-এ দিন, autoDiscoverAddons false করুন। তিনটি সিস্টেমেই npm run install:service সার্ভার শুরু করে এবং লগইনে স্বয়ংক্রিয় চালু হওয়া নথিভুক্ত করে: LaunchAgent, systemd ব্যবহারকারী সেবা বা Task Scheduler। Stremio বন্ধ থাকতে পারে। ব্যক্তিগত config.json প্রকাশ করবেন না।
+config.json তৈরি এবং macOS, Linux বা Windows-এ চালু হওয়া কনফিগার করতে npm run setup চালান। macOS-এ TV-এর অ্যাকাউন্ট দিয়ে Stremio 5-এ লগইন করুন; Linux/Windows-এ উইজার্ডে অ্যাডঅন URL লিখুন। --yes ডিফল্ট গ্রহণ করে, --no-service শুধু কনফিগারেশন সংরক্ষণ করে এবং --lang ভাষা বেছে নেয়। বিদ্যমান টোকেন ও ডাউনলোড বজায় থাকে।
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

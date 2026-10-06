@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "サーバーの設定",
-      "body": "macOSではテレビと同じアカウントでStremio 5にログインします。LinuxやWindowsではnpm run setupを実行し、設定済みアドオンのmanifest URLをconfig.jsonのsourcesに追加してautoDiscoverAddonsをfalseにします。3つのOSでnpm run install:serviceを実行すると、サーバーを起動しログイン時の自動起動を登録します。それぞれLaunchAgent、systemdユーザーサービス、Task Schedulerを使います。Stremioは閉じて構いません。非公開のconfig.jsonを公開しないでください。"
+      "body": "npm run setupを実行するとconfig.jsonを作成し、macOS、Linux、Windowsで起動を設定できます。macOSではテレビと同じアカウントでStremio 5にログインし、Linux/WindowsではウィザードにアドオンURLを入力してください。--yesは既定値を使用し、--no-serviceは設定のみを保存し、--langは言語を選択します。既存のトークンとダウンロードは保持されます。"
     },
     "connect": {
       "title": "テレビへの接続",
@@ -56,5 +56,27 @@
     "noDisk": "ディスクの空き容量が不足しています。",
     "notFound": "見つかりません。",
     "invalidMethod": "メソッドが無効です。"
+  },
+  "cli": {
+    "intro": "Enterで提案された値を使用します。Ctrl+Cで保存前に中止します。",
+    "port": "ポート（1–65535）",
+    "address": "テレビから接続できるコンピューターのアドレス（HTTP/HTTPS）",
+    "cache": "キャッシュフォルダー",
+    "budget": "キャッシュ上限（GiB）",
+    "reserve": "確保する空き容量（GiB）",
+    "discover": "このMacのStremio 5からアドオンを検出する",
+    "keepAddons": "保存済みのアドオンを保持する",
+    "addons": "設定済みのアドオンURLを1つずつ入力してください。空欄で終了します。これらのアドレスは非公開で保存されます。",
+    "addon": "アドオンのmanifest URL",
+    "startup": "今すぐ起動し、ログイン時にも自動起動する",
+    "yes": "はい",
+    "no": "いいえ",
+    "invalid": "無効な値です。もう一度入力してください。",
+    "saved": "設定を保存しました",
+    "ready": "サーバーの準備ができました",
+    "cancelled": "セットアップを中止しました",
+    "connect": "status-url.txtのアドレスを開き、Stremioにインストールを選択してください。",
+    "help": "npm run setupを実行するとconfig.jsonを作成し、macOS、Linux、Windowsで起動を設定できます。macOSではテレビと同じアカウントでStremio 5にログインし、Linux/WindowsではウィザードにアドオンURLを入力してください。--yesは既定値を使用し、--no-serviceは設定のみを保存し、--langは言語を選択します。既存のトークンとダウンロードは保持されます。",
+    "nonInteractive": "対話式セットアップはターミナルで実行してください。既定値を使用する場合は--yesを指定してください。"
   }
 }

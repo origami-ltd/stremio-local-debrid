@@ -16,17 +16,17 @@ Node.js 24 이상, 충분한 디스크 공간, 같은 연결 가능한 네트워
 
 ## 서버 설정
 
-macOS에서는 TV와 같은 계정으로 Stremio 5에 로그인합니다. Linux나 Windows에서는 npm run setup을 실행하고 설정된 애드온의 manifest URL을 config.json의 sources에 넣고 autoDiscoverAddons를 false로 설정합니다. 세 운영체제에서 npm run install:service는 서버를 시작하고 로그인 시 자동 실행을 등록합니다. 각각 LaunchAgent, systemd 사용자 서비스, Task Scheduler를 사용합니다. Stremio는 닫아도 됩니다. 비공개 config.json을 공개하지 마세요.
+npm run setup을 실행하면 config.json을 생성하고 macOS, Linux 또는 Windows에서 시작을 설정합니다. macOS에서는 TV 계정으로 Stremio 5에 로그인하고, Linux/Windows에서는 마법사에 애드온 URL을 입력하세요. --yes는 기본값을 적용하고, --no-service는 설정만 저장하며, --lang은 언어를 선택합니다. 기존 토큰과 다운로드는 유지됩니다.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

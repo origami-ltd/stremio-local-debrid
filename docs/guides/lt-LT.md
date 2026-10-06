@@ -16,17 +16,17 @@ Reikia Node.js 24 ar naujesnės versijos, laisvos vietos diske bei tame pačiame
 
 ## Serverio diegimas
 
-macOS sistemoje prisijunkite prie Stremio 5 televizoriaus paskyra. Linux arba Windows paleiskite npm run setup, įrašykite sukonfigūruotus manifestų URL į sources faile config.json ir nustatykite autoDiscoverAddons į false. Visose trijose sistemose paleiskite npm run install:service. Serveris įsijungs ir bus automatiškai paleidžiamas prisijungus per LaunchAgent, systemd arba užduočių planuoklį. Stremio gali likti uždarytas.
+Paleiskite npm run setup, kad sukurtumėte config.json ir nustatytumėte paleidimą macOS, Linux arba Windows. macOS prisijunkite prie Stremio 5 TV paskyra; Linux/Windows vedlyje įveskite priedų URL. --yes priima numatytąsias reikšmes, --no-service tik išsaugo konfigūraciją, o --lang pasirenka kalbą. Esami prieigos raktai ir atsisiuntimai išsaugomi.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

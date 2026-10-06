@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "設定伺服器",
-      "body": "在 macOS 以電視的同一帳號登入 Stremio 5。在 Linux 或 Windows 執行 npm run setup，將已設定元件的 manifest URL 加入 config.json 的 sources，並設定 autoDiscoverAddons 為 false。三個系統皆可執行 npm run install:service，啟動伺服器並登錄登入時自動啟動，分別使用 LaunchAgent、systemd 使用者服務與工作排程器。Stremio 可以關閉。請勿公開私人 config.json。"
+      "body": "執行 npm run setup 產生 config.json 並設定 macOS、Linux 或 Windows 的啟動方式。在 macOS 上用電視的帳號登入 Stremio 5；在 Linux/Windows 上將附加元件 URL 輸入精靈。--yes 接受預設值，--no-service 只儲存設定，--lang 選擇語言。現有權杖和下載內容會保留。"
     },
     "connect": {
       "title": "連接電視",
@@ -56,5 +56,27 @@
     "noDisk": "磁碟可用空間不足。",
     "notFound": "找不到。",
     "invalidMethod": "方法無效。"
+  },
+  "cli": {
+    "intro": "按 Enter 保留建議值。Ctrl+C 可在儲存前取消。",
+    "port": "連接埠（1–65535）",
+    "address": "電視可存取的電腦位址（HTTP/HTTPS）",
+    "cache": "快取資料夾",
+    "budget": "快取上限（GiB）",
+    "reserve": "保留的可用空間（GiB）",
+    "discover": "探索此 Mac 上 Stremio 5 的附加元件",
+    "keepAddons": "保留已儲存的附加元件",
+    "addons": "逐一輸入已設定的附加元件 URL。留空即可結束。這些位址會保持私密。",
+    "addon": "附加元件 manifest URL",
+    "startup": "立即啟動並在登入時自動啟動",
+    "yes": "是",
+    "no": "否",
+    "invalid": "無效值。請重試。",
+    "saved": "設定已儲存",
+    "ready": "伺服器已就緒",
+    "cancelled": "設定已取消",
+    "connect": "開啟 status-url.txt 中的位址並選擇安裝到 Stremio。",
+    "help": "執行 npm run setup 產生 config.json 並設定 macOS、Linux 或 Windows 的啟動方式。在 macOS 上用電視的帳號登入 Stremio 5；在 Linux/Windows 上將附加元件 URL 輸入精靈。--yes 接受預設值，--no-service 只儲存設定，--lang 選擇語言。現有權杖和下載內容會保留。",
+    "nonInteractive": "請在終端機中進行互動式設定，或傳入 --yes 接受預設值。"
   }
 }

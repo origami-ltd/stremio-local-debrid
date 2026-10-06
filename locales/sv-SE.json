@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Installera servern",
-      "body": "Logga in i Stremio 5 på macOS med TV:ns konto. Kör npm run setup på Linux eller Windows, lägg till konfigurerade manifestadresser i sources i config.json och sätt autoDiscoverAddons till false. Kör npm run install:service på alla tre systemen. Servern startas och aktiveras automatiskt vid inloggning via LaunchAgent, systemd eller Schemaläggaren. Stremio kan vara stängt."
+      "body": "Kör npm run setup för att skapa config.json och konfigurera start på macOS, Linux eller Windows. Logga in i Stremio 5 på macOS med TV:ns konto; ange tilläggens URL:er i guiden på Linux/Windows. --yes accepterar standardvärden, --no-service sparar endast konfigurationen och --lang väljer språk. Befintliga token och nedladdningar bevaras."
     },
     "connect": {
       "title": "Anslut TV:n",
@@ -56,5 +56,27 @@
     "noDisk": "För lite ledigt diskutrymme.",
     "notFound": "Hittades inte.",
     "invalidMethod": "Ogiltig metod."
+  },
+  "cli": {
+    "intro": "Enter behåller det föreslagna värdet. Ctrl+C avbryter före sparandet.",
+    "port": "Port (1–65535)",
+    "address": "Datoradress som TV:n kan nå (HTTP/HTTPS)",
+    "cache": "Cachemapp",
+    "budget": "Cachegräns (GiB)",
+    "reserve": "Reserverat ledigt utrymme (GiB)",
+    "discover": "Hitta tillägg från Stremio 5 på denna Mac",
+    "keepAddons": "Behåll sparade tillägg",
+    "addons": "Ange de konfigurerade tilläggens URL:er, en i taget. Ett tomt svar avslutar. Adresserna förblir privata.",
+    "addon": "URL till tilläggets manifest",
+    "startup": "Starta nu och automatiskt vid inloggning",
+    "yes": "Ja",
+    "no": "Nej",
+    "invalid": "Ogiltigt värde. Försök igen.",
+    "saved": "Konfiguration sparad",
+    "ready": "Server redo",
+    "cancelled": "Inställningen avbruten",
+    "connect": "Öppna adressen i status-url.txt och välj Installera i Stremio.",
+    "help": "Kör npm run setup för att skapa config.json och konfigurera start på macOS, Linux eller Windows. Logga in i Stremio 5 på macOS med TV:ns konto; ange tilläggens URL:er i guiden på Linux/Windows. --yes accepterar standardvärden, --no-service sparar endast konfigurationen och --lang väljer språk. Befintliga token och nedladdningar bevaras.",
+    "nonInteractive": "Använd en terminal för interaktiv inställning eller --yes för att acceptera standardvärden."
   }
 }

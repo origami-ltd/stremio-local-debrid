@@ -14,34 +14,22 @@ You need **Node.js 24 or later**, free disk space, and a computer reachable by y
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-```
-
-**macOS:** sign in to **Stremio 5** on the computer using the TV's account. Addons from that account are discovered automatically. Stremio can remain closed after signing in.
-
-**Linux and Windows:** generate a configuration, then edit `config.json` to add your configured addon manifest addresses. Keep `autoDiscoverAddons` set to `false`.
-
-```sh
 npm run setup
 ```
 
-For example, replace the example hostname with your actual addon URL:
+The built-in setup wizard creates `config.json` for you. It asks for the language, network address, cache folder and disk limits, then offers to start the background service and register automatic startup. Press Enter to keep a suggested value; use Ctrl+C to cancel before saving. You do not need to copy or hand-edit a configuration file. Rerunning setup retains the existing token, settings and downloads.
 
-```json
-{
-  "autoDiscoverAddons": false,
-  "sources": [
-    { "name": "My torrent addon", "manifestUrl": "https://addon.example/my-configuration/manifest.json" }
-  ]
-}
-```
+**macOS:** sign in to **Stremio 5** on the computer using the TV's account and enable account discovery in the wizard. Stremio can remain closed afterward. **Linux and Windows:** enter your configured addon manifest URLs in the wizard, one at a time, then leave the next answer empty to finish. Configured URLs may contain credentials and stay in the private configuration.
 
-Keep the rest of the generated configuration. A configured addon URL may contain credentials: keep it private.
-
-**On all three systems**, install and start the background service:
+For unattended installation, accept the existing configuration or detected defaults. You can also generate configuration without installing a service:
 
 ```sh
-npm run install:service
+npm run setup -- --yes
+npm run setup -- --no-service
+npm run setup -- --help
 ```
+
+`--lang pt-BR` selects the wizard and addon language; all 51 interface locales are supported. `--yes --no-service` generates configuration without questions or background startup. A computer without a detectable network address needs an address entered through the wizard or an existing `baseUrl`. The separate `npm run install:service` command remains available for updates and scripts.
 
 The installer prints the location of two private files. `state/status-url.txt` contains the dashboard address; `state/addon-url.txt` contains the addon manifest address. Copies are available in the repository's ignored `state` directory. Open the dashboard, choose a language and click **Install in Stremio**, or paste the manifest address into Stremio's addon installation field.
 
@@ -69,7 +57,7 @@ To remove automatic startup and stop the service:
 npm run uninstall:service
 ```
 
-Configuration, state and downloaded files are preserved. To start again, rerun `npm run install:service`. To run in a terminal without registering startup, use `npm run setup` followed by `npm start`.
+Configuration, state and downloaded files are preserved. To start again, rerun `npm run install:service`. To run in a terminal without registering startup, use `npm run setup -- --no-service` followed by `npm start`.
 
 ## How it works
 
@@ -101,7 +89,7 @@ Listing sources does not start a video download. A `HEAD` request may retrieve t
 
 Defaults are **100 GiB** of cached selected files and **10 GiB** of reserved free disk space. When space is needed, completed, least recently used torrents are removed first. Active readers and unfinished downloads are protected. Oversized files are rejected. If free space falls below the reserve, downloads stop; free space and select the source again to resume. BitTorrent piece boundaries, metadata and filesystem allocation mean physical disk use can differ slightly from the selected-file budget.
 
-The generated `config.json` is private and ignored by Git. [config.json.example](config.json.example) is the public example, with empty credentials and no configured providers. Copy it to `config.json` and run `npm run setup`, or let setup generate the configuration directly.
+The generated `config.json` is private and ignored by Git. [config.json.example](config.json.example) is the public reference, with empty credentials and no configured providers. The setup wizard generates your configuration directly; copying the example is optional.
 
 | Setting | Purpose |
 | --- | --- |

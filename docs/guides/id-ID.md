@@ -16,17 +16,17 @@ Gunakan Node.js 24 atau lebih baru, ruang disk cukup, serta komputer dan TV di j
 
 ## Menyiapkan server
 
-Di macOS, masuk ke Stremio 5 memakai akun TV. Di Linux atau Windows, jalankan npm run setup, tambahkan URL manifest addon yang telah dikonfigurasi ke sources dalam config.json dan atur autoDiscoverAddons ke false. Di ketiga sistem, npm run install:service menjalankan server dan mengatur mulai otomatis saat login melalui LaunchAgent, layanan pengguna systemd atau Task Scheduler. Stremio boleh ditutup. Jangan publikasikan config.json pribadi.
+Jalankan npm run setup untuk membuat config.json dan mengatur startup di macOS, Linux, atau Windows. Di macOS, login ke Stremio 5 dengan akun TV; di Linux/Windows, masukkan URL addon dalam wizard. --yes menerima nilai bawaan, --no-service hanya menyimpan konfigurasi, dan --lang memilih bahasa. Token dan unduhan yang ada tetap dipertahankan.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

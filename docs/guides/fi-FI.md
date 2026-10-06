@@ -16,17 +16,17 @@ Tarvitset Node.js 24:n tai uudemman, vapaata levytilaa sekä tietokoneen ja tele
 
 ## Palvelimen asennus
 
-Kirjaudu macOS:n Stremio 5:een television tilillä. Suorita Linuxissa tai Windowsissa npm run setup, lisää määritetyt manifest-osoitteet config.json-tiedoston sources-kohtaan ja aseta autoDiscoverAddons arvoksi false. Suorita kaikissa kolmessa järjestelmässä npm run install:service. Palvelin käynnistyy ja käynnistetään jatkossa kirjautumisen yhteydessä LaunchAgentin, systemd:n tai Tehtävien ajoituksen avulla. Stremio voi olla suljettuna.
+Luo config.json ja määritä käynnistys macOS-, Linux- tai Windows-järjestelmässä komennolla npm run setup. Kirjaudu macOS:n Stremio 5:een TV:n tilillä; syötä Linuxissa/Windowsissa lisäosien URL-osoitteet ohjattuun asennukseen. --yes hyväksyy oletukset, --no-service tallentaa vain asetukset ja --lang valitsee kielen. Nykyiset tunnisteet ja lataukset säilyvät.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

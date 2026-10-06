@@ -16,17 +16,17 @@ Node.js 24 veya üzeri, boş disk alanı ve aynı ağda birbirine erişebilen bi
 
 ## Sunucuyu kurma
 
-macOS'ta Stremio 5'e televizyon hesabıyla giriş yapın. Linux veya Windows'ta npm run setup çalıştırın, yapılandırılmış manifest URL'lerini config.json içindeki sources alanına ekleyin ve autoDiscoverAddons değerini false yapın. Üç sistemde de npm run install:service çalıştırın. Sunucu başlar ve LaunchAgent, systemd veya Görev Zamanlayıcı ile oturum açıldığında otomatik başlar. Stremio kapalı kalabilir.
+config.json oluşturmak ve macOS, Linux veya Windows'ta başlangıcı ayarlamak için npm run setup çalıştırın. macOS'ta Stremio 5'e TV hesabıyla giriş yapın; Linux/Windows'ta eklenti URL'lerini sihirbaza girin. --yes varsayılanları kabul eder, --no-service yalnızca yapılandırmayı kaydeder ve --lang dili seçer. Mevcut belirteçler ve indirmeler korunur.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

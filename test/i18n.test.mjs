@@ -42,7 +42,7 @@ test('all locale manifests, guides, errors and stream labels work over HTTP with
       assert.ok(dashboard.includes(`lang="${code}" dir="${direction(code)}"`));
       assert.ok(dashboard.includes(`stremio://${new URL(config.baseUrl).host}/${config.token}/${code}/manifest.json`));
       const guide = await (await fetch(`${base}/${code}/guide`)).text();
-      assert.ok(guide.includes('npm run install:service'));
+      assert.ok(guide.includes('npm run setup -- --no-service'));
       const method = await fetch(`${base}/${code}/manifest.json`, { method: 'POST' });
       assert.equal(method.status, 405);
       assert.equal((await method.json()).error, t.errors.invalidMethod);

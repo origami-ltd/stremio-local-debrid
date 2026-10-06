@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Kiszolgáló telepítése",
-      "body": "macOS alatt jelentkezz be a Stremio 5-be a tévé fiókjával. Linux vagy Windows alatt futtasd az npm run setup parancsot, add a beállított manifest-URL-eket a config.json sources listájához és állítsd az autoDiscoverAddons értékét false-ra. Mindhárom rendszeren futtasd az npm run install:service parancsot. A kiszolgáló elindul és bejelentkezéskor automatikusan indul LaunchAgent, systemd vagy Feladatütemező segítségével. A Stremio bezárható."
+      "body": "Futtassa az npm run setup parancsot a config.json létrehozásához és az indítás beállításához macOS, Linux vagy Windows rendszeren. macOS-en jelentkezzen be a Stremio 5-be a TV fiókjával; Linux/Windowson adja meg a bővítmények URL-jeit a varázslóban. A --yes elfogadja az alapértékeket, a --no-service csak a beállítást menti, a --lang pedig nyelvet választ. A meglévő tokenek és letöltések megmaradnak."
     },
     "connect": {
       "title": "Tévé csatlakoztatása",
@@ -56,5 +56,27 @@
     "noDisk": "Nincs elég szabad lemezterület.",
     "notFound": "Nem található.",
     "invalidMethod": "Érvénytelen metódus."
+  },
+  "cli": {
+    "intro": "Az Enter megtartja a javasolt értéket. A Ctrl+C mentés előtt megszakítja a beállítást.",
+    "port": "Port (1–65535)",
+    "address": "A számítógép TV-ről elérhető címe (HTTP/HTTPS)",
+    "cache": "Gyorsítótár mappája",
+    "budget": "Gyorsítótár korlátja (GiB)",
+    "reserve": "Fenntartott szabad hely (GiB)",
+    "discover": "Stremio 5-bővítmények keresése ezen a Macen",
+    "keepAddons": "Mentett bővítmények megtartása",
+    "addons": "Adja meg egyenként a beállított bővítmények URL-jeit. Üres válasz befejezi a listát. A címek privátak maradnak.",
+    "addon": "Bővítmény manifestjének URL-je",
+    "startup": "Indítás most és automatikusan bejelentkezéskor",
+    "yes": "Igen",
+    "no": "Nem",
+    "invalid": "Érvénytelen érték. Próbálja újra.",
+    "saved": "Beállítás mentve",
+    "ready": "A szerver kész",
+    "cancelled": "Beállítás megszakítva",
+    "connect": "Nyissa meg a status-url.txt címét, és válassza a Telepítés Stremióba lehetőséget.",
+    "help": "Futtassa az npm run setup parancsot a config.json létrehozásához és az indítás beállításához macOS, Linux vagy Windows rendszeren. macOS-en jelentkezzen be a Stremio 5-be a TV fiókjával; Linux/Windowson adja meg a bővítmények URL-jeit a varázslóban. A --yes elfogadja az alapértékeket, a --no-service csak a beállítást menti, a --lang pedig nyelvet választ. A meglévő tokenek és letöltések megmaradnak.",
+    "nonInteractive": "Használjon terminált az interaktív beállításhoz vagy --yes kapcsolót az alapértékek elfogadásához."
   }
 }

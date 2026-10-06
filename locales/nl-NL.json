@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Server installeren",
-      "body": "Meld je op macOS aan bij Stremio 5 met het tv-account. Voer op Linux of Windows npm run setup uit, voeg geconfigureerde manifest-URL's toe aan sources in config.json en zet autoDiscoverAddons op false. Voer op alle drie systemen npm run install:service uit. De server start meteen en automatisch bij aanmelden via LaunchAgent, systemd of Taakplanner. Stremio mag gesloten blijven."
+      "body": "Voer npm run setup uit om config.json te maken en opstarten in macOS, Linux of Windows in te stellen. Meld Stremio 5 op macOS aan met het TV-account; voer op Linux/Windows de addon-URL's in de wizard in. --yes accepteert de standaardwaarden, --no-service slaat alleen de configuratie op en --lang kiest de taal. Bestaande tokens en downloads blijven behouden."
     },
     "connect": {
       "title": "Tv verbinden",
@@ -56,5 +56,27 @@
     "noDisk": "Onvoldoende vrije schijfruimte.",
     "notFound": "Niet gevonden.",
     "invalidMethod": "Ongeldige methode."
+  },
+  "cli": {
+    "intro": "Enter behoudt de voorgestelde waarde. Ctrl+C annuleert vóór het opslaan.",
+    "port": "Poort (1–65535)",
+    "address": "Computeradres dat de TV kan bereiken (HTTP/HTTPS)",
+    "cache": "Cachemap",
+    "budget": "Cachelimiet (GiB)",
+    "reserve": "Gereserveerde vrije ruimte (GiB)",
+    "discover": "Addons van Stremio 5 op deze Mac detecteren",
+    "keepAddons": "Opgeslagen addons behouden",
+    "addons": "Voer de ingestelde addon-URL's één voor één in. Een leeg antwoord sluit de lijst. Deze adressen blijven privé.",
+    "addon": "URL van het addonmanifest",
+    "startup": "Nu starten en automatisch bij het aanmelden",
+    "yes": "Ja",
+    "no": "Nee",
+    "invalid": "Ongeldige waarde. Probeer opnieuw.",
+    "saved": "Configuratie opgeslagen",
+    "ready": "Server gereed",
+    "cancelled": "Installatie geannuleerd",
+    "connect": "Open het adres in status-url.txt en kies Installeren in Stremio.",
+    "help": "Voer npm run setup uit om config.json te maken en opstarten in macOS, Linux of Windows in te stellen. Meld Stremio 5 op macOS aan met het TV-account; voer op Linux/Windows de addon-URL's in de wizard in. --yes accepteert de standaardwaarden, --no-service slaat alleen de configuratie op en --lang kiest de taal. Bestaande tokens en downloads blijven behouden.",
+    "nonInteractive": "Gebruik een terminal voor interactieve installatie of --yes om de standaardwaarden te accepteren."
   }
 }

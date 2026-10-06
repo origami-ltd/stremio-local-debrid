@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "设置服务器",
-      "body": "在 macOS 上，用电视的同一账户登录 Stremio 5。在 Linux 或 Windows 上，运行 npm run setup，把已配置插件的 manifest URL 加到 config.json 的 sources 中，并设 autoDiscoverAddons 为 false。三个系统均可运行 npm run install:service，启动服务器并设置登录后自动启动，分别使用 LaunchAgent、systemd 用户服务和 Task Scheduler。Stremio 可以关闭。不要公开私有 config.json。"
+      "body": "运行 npm run setup 生成 config.json 并配置 macOS、Linux 或 Windows 的启动方式。在 macOS 上用电视的账号登录 Stremio 5；在 Linux/Windows 上将插件 URL 输入向导。--yes 接受默认值，--no-service 仅保存配置，--lang 选择语言。现有令牌和下载内容会保留。"
     },
     "connect": {
       "title": "连接电视",
@@ -56,5 +56,27 @@
     "noDisk": "磁盘可用空间不足。",
     "notFound": "未找到。",
     "invalidMethod": "无效的方法。"
+  },
+  "cli": {
+    "intro": "按 Enter 保留建议值。Ctrl+C 可在保存前取消。",
+    "port": "端口（1–65535）",
+    "address": "电视可访问的计算机地址（HTTP/HTTPS）",
+    "cache": "缓存文件夹",
+    "budget": "缓存上限（GiB）",
+    "reserve": "保留的可用空间（GiB）",
+    "discover": "发现此 Mac 上 Stremio 5 的插件",
+    "keepAddons": "保留已保存的插件",
+    "addons": "逐个输入已配置的插件 URL。留空结束。这些地址会保持私密。",
+    "addon": "插件 manifest URL",
+    "startup": "立即启动并在登录时自动启动",
+    "yes": "是",
+    "no": "否",
+    "invalid": "无效值。请重试。",
+    "saved": "配置已保存",
+    "ready": "服务器已就绪",
+    "cancelled": "设置已取消",
+    "connect": "打开 status-url.txt 中的地址并选择安装到 Stremio。",
+    "help": "运行 npm run setup 生成 config.json 并配置 macOS、Linux 或 Windows 的启动方式。在 macOS 上用电视的账号登录 Stremio 5；在 Linux/Windows 上将插件 URL 输入向导。--yes 接受默认值，--no-service 仅保存配置，--lang 选择语言。现有令牌和下载内容会保留。",
+    "nonInteractive": "请在终端中运行交互式设置，或传入 --yes 接受默认值。"
   }
 }

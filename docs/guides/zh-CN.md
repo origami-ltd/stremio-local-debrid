@@ -16,17 +16,17 @@
 
 ## 设置服务器
 
-在 macOS 上，用电视的同一账户登录 Stremio 5。在 Linux 或 Windows 上，运行 npm run setup，把已配置插件的 manifest URL 加到 config.json 的 sources 中，并设 autoDiscoverAddons 为 false。三个系统均可运行 npm run install:service，启动服务器并设置登录后自动启动，分别使用 LaunchAgent、systemd 用户服务和 Task Scheduler。Stremio 可以关闭。不要公开私有 config.json。
+运行 npm run setup 生成 config.json 并配置 macOS、Linux 或 Windows 的启动方式。在 macOS 上用电视的账号登录 Stremio 5；在 Linux/Windows 上将插件 URL 输入向导。--yes 接受默认值，--no-service 仅保存配置，--lang 选择语言。现有令牌和下载内容会保留。
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

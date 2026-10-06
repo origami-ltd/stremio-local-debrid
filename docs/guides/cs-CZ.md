@@ -16,17 +16,17 @@ Použijte Node.js 24 nebo novější, volné místo na disku a počítač a tele
 
 ## Instalace serveru
 
-V macOS se přihlaste do Stremio 5 účtem televize. V Linuxu nebo Windows spusťte npm run setup, přidejte nastavené adresy manifestů do sources v config.json a nastavte autoDiscoverAddons na false. Na všech třech systémech spusťte npm run install:service. Server se spustí a nastaví automatický start při přihlášení přes LaunchAgent, systemd nebo Plánovač úloh. Stremio může zůstat zavřené.
+Spusťte npm run setup pro vytvoření config.json a nastavení spouštění v macOS, Linuxu nebo Windows. V macOS se přihlaste do Stremio 5 účtem TV; v Linuxu/Windows zadejte URL doplňků v průvodci. --yes přijme výchozí hodnoty, --no-service pouze uloží konfiguraci a --lang zvolí jazyk. Stávající tokeny a stažené soubory se zachovají.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

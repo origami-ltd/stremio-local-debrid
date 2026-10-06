@@ -16,17 +16,17 @@ Bruk Node.js 24 eller nyere, ledig diskplass og en datamaskin og TV som når hve
 
 ## Installer serveren
 
-Logg inn i Stremio 5 på macOS med TV-kontoen. Kjør npm run setup på Linux eller Windows, legg konfigurerte manifestadresser til sources i config.json og sett autoDiscoverAddons til false. Kjør npm run install:service på alle tre systemer. Serveren starter og settes til automatisk oppstart ved innlogging via LaunchAgent, systemd eller Oppgaveplanlegging. Stremio kan være lukket.
+Kjør npm run setup for å opprette config.json og konfigurere oppstart på macOS, Linux eller Windows. Logg inn i Stremio 5 på macOS med TV-ens konto; skriv tilleggsadressene i veiviseren på Linux/Windows. --yes godtar standardverdiene, --no-service lagrer bare konfigurasjonen, og --lang velger språk. Eksisterende token og nedlastinger bevares.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

@@ -16,17 +16,17 @@ Node.js 24 அல்லது புதியது, போதுமான க�
 
 ## சேவையகத்தை அமைத்தல்
 
-macOS-இல் தொலைக்காட்சியின் அதே கணக்கில் Stremio 5-ஐத் திறக்கவும். Linux அல்லது Windows-இல் npm run setup இயக்கி, அமைக்கப்பட்ட துணைநிரல்களின் manifest URL-ஐ config.json-இன் sources-இல் சேர்த்து autoDiscoverAddons-ஐ false ஆக்கவும். மூன்று அமைப்புகளிலும் npm run install:service சேவையகத்தைத் தொடங்கி, உள்நுழையும்போது தானாக இயக்க LaunchAgent, systemd பயனர் சேவை அல்லது Task Scheduler-இல் பதிவு செய்கிறது. Stremio மூடியிருக்கலாம். தனிப்பட்ட config.json-ஐ வெளியிட வேண்டாம்.
+config.json உருவாக்கி macOS, Linux அல்லது Windows-இல் தொடக்கத்தை அமைக்க npm run setup இயக்கவும். macOS-இல் TV கணக்குடன் Stremio 5-இல் உள்நுழையவும்; Linux/Windows-இல் வழிகாட்டியில் துணை நிரல் URL-களை உள்ளிடவும். --yes இயல்புநிலைகளை ஏற்கும், --no-service அமைப்பை மட்டும் சேமிக்கும், --lang மொழியைத் தேர்ந்தெடுக்கும். ஏற்கெனவே உள்ள டோக்கன்களும் பதிவிறக்கங்களும் பாதுகாக்கப்படும்.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Preparar el servidor",
-      "body": "En macOS, inicia sesión en Stremio 5 con la cuenta del televisor. En Linux o Windows, ejecuta npm run setup, añade las URL configuradas de los manifests a sources en config.json y establece autoDiscoverAddons en false. Ejecuta npm run install:service en cualquiera de los tres sistemas. El instalador inicia el servidor y activa el arranque automático al iniciar sesión mediante LaunchAgent, systemd o el Programador de tareas. Stremio puede permanecer cerrado."
+      "body": "Ejecuta npm run setup para generar config.json y configurar el inicio en macOS, Linux o Windows. En macOS, inicia sesión en Stremio 5 con la cuenta de la TV; en Linux/Windows, introduce las URL de los addons en el asistente. --yes acepta los valores predeterminados, --no-service solo guarda la configuración y --lang elige el idioma. Se conservan los tokens y las descargas existentes."
     },
     "connect": {
       "title": "Conectar el televisor",
@@ -56,5 +56,27 @@
     "noDisk": "Espacio libre insuficiente en disco.",
     "notFound": "No encontrado.",
     "invalidMethod": "Método no válido."
+  },
+  "cli": {
+    "intro": "Enter mantiene el valor propuesto. Ctrl+C cancela antes de guardar.",
+    "port": "Puerto (1–65535)",
+    "address": "Dirección del ordenador accesible desde la TV (HTTP/HTTPS)",
+    "cache": "Carpeta de caché",
+    "budget": "Límite de caché (GiB)",
+    "reserve": "Espacio libre reservado (GiB)",
+    "discover": "Detectar addons de Stremio 5 en este Mac",
+    "keepAddons": "Conservar los addons guardados",
+    "addons": "Introduce las URL configuradas de los addons, una por una. Una respuesta vacía termina. Estas direcciones permanecen privadas.",
+    "addon": "URL del manifiesto del addon",
+    "startup": "Iniciar ahora y automáticamente al iniciar sesión",
+    "yes": "Sí",
+    "no": "No",
+    "invalid": "Valor no válido. Inténtalo de nuevo.",
+    "saved": "Configuración guardada",
+    "ready": "Servidor listo",
+    "cancelled": "Configuración cancelada",
+    "connect": "Abre la dirección de status-url.txt y elige Instalar en Stremio.",
+    "help": "Ejecuta npm run setup para generar config.json y configurar el inicio en macOS, Linux o Windows. En macOS, inicia sesión en Stremio 5 con la cuenta de la TV; en Linux/Windows, introduce las URL de los addons en el asistente. --yes acepta los valores predeterminados, --no-service solo guarda la configuración y --lang elige el idioma. Se conservan los tokens y las descargas existentes.",
+    "nonInteractive": "Usa un terminal para la configuración interactiva o añade --yes para aceptar los valores predeterminados."
   }
 }

@@ -16,17 +16,17 @@ Cần Node.js 24 trở lên, đủ dung lượng trống, máy tính và TV tron
 
 ## Thiết lập máy chủ
 
-Trên macOS, đăng nhập Stremio 5 bằng tài khoản của TV. Trên Linux hoặc Windows, chạy npm run setup, thêm URL manifest của tiện ích đã cấu hình vào sources trong config.json và đặt autoDiscoverAddons thành false. Trên cả ba hệ thống, npm run install:service khởi động máy chủ và đăng ký tự chạy khi đăng nhập qua LaunchAgent, dịch vụ người dùng systemd hoặc Task Scheduler. Có thể đóng Stremio. Không công bố config.json riêng.
+Chạy npm run setup để tạo config.json và cấu hình khởi động trên macOS, Linux hoặc Windows. Trên macOS, đăng nhập Stremio 5 bằng tài khoản TV; trên Linux/Windows, nhập URL addon trong trình hướng dẫn. --yes chấp nhận mặc định, --no-service chỉ lưu cấu hình và --lang chọn ngôn ngữ. Token và nội dung đã tải được giữ nguyên.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

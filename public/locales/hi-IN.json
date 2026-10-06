@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "सर्वर सेट करें",
-      "body": "macOS में टीवी वाले खाते से Stremio 5 में लॉग इन करें। Linux या Windows में npm run setup चलाएँ, कॉन्फ़िगर किए गए ऐडऑन की manifest URL को config.json के sources में जोड़ें और autoDiscoverAddons को false रखें। तीनों सिस्टम पर npm run install:service सर्वर शुरू करता है और लॉग इन पर स्वचालित शुरुआत दर्ज करता है: LaunchAgent, systemd यूज़र सेवा या Task Scheduler। Stremio बंद रह सकता है। निजी config.json प्रकाशित न करें।"
+      "body": "config.json बनाने और macOS, Linux या Windows पर स्टार्टअप कॉन्फ़िगर करने के लिए npm run setup चलाएँ। macOS पर TV के खाते से Stremio 5 में लॉगिन करें; Linux/Windows पर विज़ार्ड में ऐडऑन URL दर्ज करें। --yes डिफ़ॉल्ट स्वीकार करता है, --no-service केवल कॉन्फ़िगरेशन सहेजता है और --lang भाषा चुनता है। मौजूदा टोकन और डाउनलोड सुरक्षित रहते हैं।"
     },
     "connect": {
       "title": "टीवी जोड़ें",
@@ -56,5 +56,27 @@
     "noDisk": "डिस्क में पर्याप्त खाली जगह नहीं है।",
     "notFound": "नहीं मिला।",
     "invalidMethod": "अमान्य विधि।"
+  },
+  "cli": {
+    "intro": "Enter से सुझाया मान बना रहता है। Ctrl+C सहेजने से पहले रद्द करता है।",
+    "port": "पोर्ट (1–65535)",
+    "address": "TV से पहुँचा जा सकने वाला कंप्यूटर पता (HTTP/HTTPS)",
+    "cache": "कैश फ़ोल्डर",
+    "budget": "कैश सीमा (GiB)",
+    "reserve": "आरक्षित खाली जगह (GiB)",
+    "discover": "इस Mac पर Stremio 5 के ऐडऑन खोजें",
+    "keepAddons": "सहेजे गए ऐडऑन रखें",
+    "addons": "कॉन्फ़िगर किए गए ऐडऑन URL एक-एक करके दर्ज करें। खाली उत्तर सूची समाप्त करता है। ये पते निजी रहते हैं।",
+    "addon": "ऐडऑन manifest का URL",
+    "startup": "अभी और लॉगिन पर अपने आप शुरू करें",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "invalid": "अमान्य मान। फिर से प्रयास करें।",
+    "saved": "कॉन्फ़िगरेशन सहेजा गया",
+    "ready": "सर्वर तैयार है",
+    "cancelled": "सेटअप रद्द हुआ",
+    "connect": "status-url.txt का पता खोलें और Stremio में इंस्टॉल करें चुनें।",
+    "help": "config.json बनाने और macOS, Linux या Windows पर स्टार्टअप कॉन्फ़िगर करने के लिए npm run setup चलाएँ। macOS पर TV के खाते से Stremio 5 में लॉगिन करें; Linux/Windows पर विज़ार्ड में ऐडऑन URL दर्ज करें। --yes डिफ़ॉल्ट स्वीकार करता है, --no-service केवल कॉन्फ़िगरेशन सहेजता है और --lang भाषा चुनता है। मौजूदा टोकन और डाउनलोड सुरक्षित रहते हैं।",
+    "nonInteractive": "इंटरैक्टिव सेटअप के लिए टर्मिनल इस्तेमाल करें या डिफ़ॉल्ट स्वीकार करने के लिए --yes दें।"
   }
 }

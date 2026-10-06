@@ -5,6 +5,7 @@
 - Public self-hosting project under Origami Ltd with MIT-PoU licensing.
 - Dashboard, stream labels, errors and installation guides in all 51 locales from the pinned Stremio interface translation registry, including right-to-left layout.
 - Automatic startup at login on macOS, Linux and Windows, with a service removal command that preserves cache and state.
+- Built-in setup wizard generates private configuration, accepts manual addon URLs and offers automatic startup; unattended setup is available with `--yes`.
 - Public installation/configuration portal, discovery manifest, CI and GitHub Pages publication.
 
 ## 1.1.0

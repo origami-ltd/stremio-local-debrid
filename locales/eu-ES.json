@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Zerbitzaria instalatu",
-      "body": "macOS-en hasi saioa Stremio 5-en telebistaren kontuarekin. Linux edo Windows-en exekutatu npm run setup, gehitu konfiguratutako manifest URL-ak config.json-eko sources zerrendara eta ezarri autoDiscoverAddons false gisa. Hiru sistemetan exekutatu npm run install:service. Zerbitzaria abiatzen da eta saioa hastean automatikoki abiatuko da LaunchAgent, systemd edo Ataza-antolatzailearen bidez. Stremio itxita egon daiteke."
+      "body": "Exekutatu npm run setup config.json sortzeko eta macOS, Linux edo Windowsen abioa konfiguratzeko. macOSen, hasi saioa Stremio 5en telebistako kontuarekin; Linux/Windowsen, sartu gehigarrien URLak morroian. --yes aukerak lehenetsiak onartzen ditu, --no-service aukerak konfigurazioa bakarrik gordetzen du eta --lang aukerak hizkuntza hautatzen du. Dauden tokenak eta deskargak mantentzen dira."
     },
     "connect": {
       "title": "Telebista konektatu",
@@ -56,5 +56,27 @@
     "noDisk": "Diskoan ez dago leku libre nahikorik.",
     "notFound": "Ez da aurkitu.",
     "invalidMethod": "Metodo baliogabea."
+  },
+  "cli": {
+    "intro": "Enter sakatzeak proposatutako balioa mantentzen du. Ctrl+C-k gorde aurretik bertan behera uzten du.",
+    "port": "Ataka (1–65535)",
+    "address": "Telebistatik eskuragarri dagoen ordenagailuaren helbidea (HTTP/HTTPS)",
+    "cache": "Cache-karpeta",
+    "budget": "Cache-muga (GiB)",
+    "reserve": "Erreserbatutako espazio librea (GiB)",
+    "discover": "Aurkitu Mac honetako Stremio 5 gehigarriak",
+    "keepAddons": "Mantendu gordetako gehigarriak",
+    "addons": "Sartu konfiguratutako gehigarrien URLak banan-banan. Erantzun hutsak amaitzen du. Helbide hauek pribatuak dira.",
+    "addon": "Gehigarriaren manifestuaren URLa",
+    "startup": "Hasi orain eta automatikoki saioa hastean",
+    "yes": "Bai",
+    "no": "Ez",
+    "invalid": "Balio baliogabea. Saiatu berriro.",
+    "saved": "Konfigurazioa gordeta",
+    "ready": "Zerbitzaria prest",
+    "cancelled": "Konfigurazioa bertan behera utzi da",
+    "connect": "Ireki status-url.txt fitxategiko helbidea eta aukeratu Instalatu Stremion.",
+    "help": "Exekutatu npm run setup config.json sortzeko eta macOS, Linux edo Windowsen abioa konfiguratzeko. macOSen, hasi saioa Stremio 5en telebistako kontuarekin; Linux/Windowsen, sartu gehigarrien URLak morroian. --yes aukerak lehenetsiak onartzen ditu, --no-service aukerak konfigurazioa bakarrik gordetzen du eta --lang aukerak hizkuntza hautatzen du. Dauden tokenak eta deskargak mantentzen dira.",
+    "nonInteractive": "Erabili terminala konfigurazio interaktiborako edo --yes lehenetsiak onartzeko."
   }
 }

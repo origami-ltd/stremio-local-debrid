@@ -16,17 +16,17 @@ Node.js 24 లేదా కొత్తది, తగిన ఖాళీ డి�
 
 ## సర్వర్ ఏర్పాటు
 
-macOSలో టీవీ ఖాతాతోనే Stremio 5లో లాగిన్ అవ్వండి. Linux లేదా Windowsలో npm run setup నడిపి, కాన్ఫిగర్ చేసిన యాడ్‌ఆన్ manifest URLలను config.jsonలో sourcesకు జోడించి autoDiscoverAddonsను false చేయండి. మూడు వ్యవస్థల్లో npm run install:service సర్వర్ మొదలుపెట్టి, లాగిన్ సమయంలో స్వయంచాలక ప్రారంభాన్ని LaunchAgent, systemd వినియోగదారు సేవ లేదా Task Scheduler ద్వారా నమోదు చేస్తుంది. Stremio మూసి ఉండవచ్చు. వ్యక్తిగత config.jsonను ప్రచురించవద్దు.
+config.json సృష్టించి macOS, Linux లేదా Windowsలో ప్రారంభాన్ని కాన్ఫిగర్ చేయడానికి npm run setup అమలు చేయండి. macOSలో TV ఖాతాతో Stremio 5లో లాగిన్ చేయండి; Linux/Windowsలో విజార్డ్‌లో యాడాన్ URLలను నమోదు చేయండి. --yes డిఫాల్ట్‌లను అంగీకరిస్తుంది, --no-service కాన్ఫిగరేషన్‌ను మాత్రమే సేవ్ చేస్తుంది, --lang భాషను ఎంచుకుంటుంది. ఇప్పటికే ఉన్న టోకెన్లు, డౌన్‌లోడ్‌లు అలాగే ఉంటాయి.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

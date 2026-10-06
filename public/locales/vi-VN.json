@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Thiết lập máy chủ",
-      "body": "Trên macOS, đăng nhập Stremio 5 bằng tài khoản của TV. Trên Linux hoặc Windows, chạy npm run setup, thêm URL manifest của tiện ích đã cấu hình vào sources trong config.json và đặt autoDiscoverAddons thành false. Trên cả ba hệ thống, npm run install:service khởi động máy chủ và đăng ký tự chạy khi đăng nhập qua LaunchAgent, dịch vụ người dùng systemd hoặc Task Scheduler. Có thể đóng Stremio. Không công bố config.json riêng."
+      "body": "Chạy npm run setup để tạo config.json và cấu hình khởi động trên macOS, Linux hoặc Windows. Trên macOS, đăng nhập Stremio 5 bằng tài khoản TV; trên Linux/Windows, nhập URL addon trong trình hướng dẫn. --yes chấp nhận mặc định, --no-service chỉ lưu cấu hình và --lang chọn ngôn ngữ. Token và nội dung đã tải được giữ nguyên."
     },
     "connect": {
       "title": "Kết nối TV",
@@ -56,5 +56,27 @@
     "noDisk": "Không đủ dung lượng đĩa trống.",
     "notFound": "Không tìm thấy.",
     "invalidMethod": "Phương thức không hợp lệ."
+  },
+  "cli": {
+    "intro": "Enter giữ giá trị đề xuất. Ctrl+C hủy trước khi lưu.",
+    "port": "Cổng (1–65535)",
+    "address": "Địa chỉ máy tính mà TV truy cập được (HTTP/HTTPS)",
+    "cache": "Thư mục bộ nhớ đệm",
+    "budget": "Giới hạn bộ nhớ đệm (GiB)",
+    "reserve": "Dung lượng trống dành riêng (GiB)",
+    "discover": "Tìm addon Stremio 5 trên Mac này",
+    "keepAddons": "Giữ các addon đã lưu",
+    "addons": "Nhập từng URL addon đã cấu hình. Trả lời trống để kết thúc. Các địa chỉ này luôn riêng tư.",
+    "addon": "URL manifest của addon",
+    "startup": "Khởi động ngay và tự động khi đăng nhập",
+    "yes": "Có",
+    "no": "Không",
+    "invalid": "Giá trị không hợp lệ. Hãy thử lại.",
+    "saved": "Đã lưu cấu hình",
+    "ready": "Máy chủ sẵn sàng",
+    "cancelled": "Đã hủy thiết lập",
+    "connect": "Mở địa chỉ trong status-url.txt và chọn Cài vào Stremio.",
+    "help": "Chạy npm run setup để tạo config.json và cấu hình khởi động trên macOS, Linux hoặc Windows. Trên macOS, đăng nhập Stremio 5 bằng tài khoản TV; trên Linux/Windows, nhập URL addon trong trình hướng dẫn. --yes chấp nhận mặc định, --no-service chỉ lưu cấu hình và --lang chọn ngôn ngữ. Token và nội dung đã tải được giữ nguyên.",
+    "nonInteractive": "Dùng terminal để thiết lập tương tác hoặc --yes để chấp nhận mặc định."
   }
 }

@@ -16,17 +16,17 @@
 
 ## הגדרת השרת
 
-ב־macOS היכנסו ל־Stremio 5 עם חשבון הטלוויזיה. ב־Linux או ב־Windows הריצו npm run setup, הוסיפו כתובות manifest של תוספים מוגדרים ל־sources ב־config.json והגדירו autoDiscoverAddons כ־false. בכל שלוש המערכות, npm run install:service מפעיל את השרת ורושם הפעלה אוטומטית בכניסה, דרך LaunchAgent, שירות משתמש של systemd או Task Scheduler. אפשר לסגור את Stremio. אל תפרסמו את config.json הפרטי.
+הריצו npm run setup ליצירת config.json ולהגדרת ההפעלה ב-macOS, Linux או Windows. ב-macOS התחברו ל-Stremio 5 עם חשבון הטלוויזיה; ב-Linux/Windows הזינו באשף את כתובות התוספים. --yes מקבל את ברירות המחדל, --no-service שומר רק את ההגדרות והאפשרות --lang בוחר שפה. האסימונים וההורדות הקיימים נשמרים.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

@@ -18,5 +18,5 @@ export function renderDashboard(config, language, downloads, sources, bytes) {
 
 export function renderGuide(config, language) {
   const t = translation(language);
-  return `${header(config, language, t.documentation)}<p><a href="${config.baseUrl}/${config.token}/${languageCode(language)}/">${t.name}</a></p>${Object.entries(t.guide).map(([key, section]) => `<section><h2>${escapeHtml(section.title)}</h2><p>${escapeHtml(section.body)}</p>${key === 'setup' ? '<pre><code>git clone https://github.com/origami-ltd/stremio-local-debrid.git\ncd stremio-local-debrid\nnpm ci\nnpm run install:service</code></pre><pre><code>npm run setup\nnpm start</code></pre>' : ''}</section>`).join('')}${footer(language)}`;
+  return `${header(config, language, t.documentation)}<p><a href="${config.baseUrl}/${config.token}/${languageCode(language)}/">${t.name}</a></p>${Object.entries(t.guide).map(([key, section]) => `<section><h2>${escapeHtml(section.title)}</h2><p>${escapeHtml(section.body)}</p>${key === 'setup' ? '<pre><code>git clone https://github.com/origami-ltd/stremio-local-debrid.git\ncd stremio-local-debrid\nnpm ci\nnpm run setup</code></pre><pre><code>npm run setup -- --no-service\nnpm start</code></pre>' : ''}</section>`).join('')}${footer(language)}`;
 }

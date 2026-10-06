@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Serveri paigaldamine",
-      "body": "Logi macOS-i Stremio 5-s sisse teleri kontoga. Linuxis või Windowsis käivita npm run setup, lisa seadistatud manifesti URL-id config.json-i sources-loendisse ja määra autoDiscoverAddons väärtuseks false. Käivita kõigis kolmes süsteemis npm run install:service. Server käivitub kohe ja automaatselt sisselogimisel LaunchAgenti, systemd või tegumiplaneerija abil. Stremio võib suletud olla."
+      "body": "Käivita npm run setup, et luua config.json ja seadistada käivitumine macOS-is, Linuxis või Windowsis. macOS-is logi Stremio 5-sse TV kontoga; Linuxis/Windowsis sisesta lisade URL-id viisardis. --yes nõustub vaikeväärtustega, --no-service salvestab ainult seadistuse ja --lang valib keele. Olemasolevad tokenid ja allalaadimised säilivad."
     },
     "connect": {
       "title": "Teleri ühendamine",
@@ -56,5 +56,27 @@
     "noDisk": "Kettal pole piisavalt vaba ruumi.",
     "notFound": "Ei leitud.",
     "invalidMethod": "Vigane meetod."
+  },
+  "cli": {
+    "intro": "Enter säilitab soovitatud väärtuse. Ctrl+C katkestab enne salvestamist.",
+    "port": "Port (1–65535)",
+    "address": "Arvuti aadress, millele TV pääseb ligi (HTTP/HTTPS)",
+    "cache": "Vahemälu kaust",
+    "budget": "Vahemälu piirang (GiB)",
+    "reserve": "Reserveeritud vaba ruum (GiB)",
+    "discover": "Leia selle Maci Stremio 5 lisad",
+    "keepAddons": "Säilita salvestatud lisad",
+    "addons": "Sisesta seadistatud lisade URL-id ükshaaval. Tühi vastus lõpetab loendi. Aadressid jäävad privaatseks.",
+    "addon": "Lisa manifesti URL",
+    "startup": "Käivita nüüd ja automaatselt sisselogimisel",
+    "yes": "Jah",
+    "no": "Ei",
+    "invalid": "Vigane väärtus. Proovi uuesti.",
+    "saved": "Seadistus salvestatud",
+    "ready": "Server valmis",
+    "cancelled": "Seadistamine katkestatud",
+    "connect": "Ava aadress failis status-url.txt ja vali Paigalda Stremiosse.",
+    "help": "Käivita npm run setup, et luua config.json ja seadistada käivitumine macOS-is, Linuxis või Windowsis. macOS-is logi Stremio 5-sse TV kontoga; Linuxis/Windowsis sisesta lisade URL-id viisardis. --yes nõustub vaikeväärtustega, --no-service salvestab ainult seadistuse ja --lang valib keele. Olemasolevad tokenid ja allalaadimised säilivad.",
+    "nonInteractive": "Kasuta interaktiivseks seadistuseks terminali või --yes, et nõustuda vaikeväärtustega."
   }
 }

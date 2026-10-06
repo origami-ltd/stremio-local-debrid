@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "서버 설정",
-      "body": "macOS에서는 TV와 같은 계정으로 Stremio 5에 로그인합니다. Linux나 Windows에서는 npm run setup을 실행하고 설정된 애드온의 manifest URL을 config.json의 sources에 넣고 autoDiscoverAddons를 false로 설정합니다. 세 운영체제에서 npm run install:service는 서버를 시작하고 로그인 시 자동 실행을 등록합니다. 각각 LaunchAgent, systemd 사용자 서비스, Task Scheduler를 사용합니다. Stremio는 닫아도 됩니다. 비공개 config.json을 공개하지 마세요."
+      "body": "npm run setup을 실행하면 config.json을 생성하고 macOS, Linux 또는 Windows에서 시작을 설정합니다. macOS에서는 TV 계정으로 Stremio 5에 로그인하고, Linux/Windows에서는 마법사에 애드온 URL을 입력하세요. --yes는 기본값을 적용하고, --no-service는 설정만 저장하며, --lang은 언어를 선택합니다. 기존 토큰과 다운로드는 유지됩니다."
     },
     "connect": {
       "title": "TV 연결",
@@ -56,5 +56,27 @@
     "noDisk": "디스크 여유 공간이 부족합니다.",
     "notFound": "찾을 수 없습니다.",
     "invalidMethod": "잘못된 메서드입니다."
+  },
+  "cli": {
+    "intro": "Enter를 누르면 제안된 값을 유지합니다. Ctrl+C는 저장 전에 취소합니다.",
+    "port": "포트 (1–65535)",
+    "address": "TV에서 접근할 수 있는 컴퓨터 주소 (HTTP/HTTPS)",
+    "cache": "캐시 폴더",
+    "budget": "캐시 한도 (GiB)",
+    "reserve": "예약할 여유 공간 (GiB)",
+    "discover": "이 Mac의 Stremio 5에서 애드온 검색",
+    "keepAddons": "저장된 애드온 유지",
+    "addons": "설정된 애드온 URL을 하나씩 입력하세요. 빈 답변으로 입력을 마칩니다. 주소는 비공개로 유지됩니다.",
+    "addon": "애드온 manifest URL",
+    "startup": "지금 시작하고 로그인 시 자동 시작",
+    "yes": "예",
+    "no": "아니요",
+    "invalid": "잘못된 값입니다. 다시 시도하세요.",
+    "saved": "설정 저장됨",
+    "ready": "서버 준비 완료",
+    "cancelled": "설정 취소됨",
+    "connect": "status-url.txt의 주소를 열고 Stremio에 설치를 선택하세요.",
+    "help": "npm run setup을 실행하면 config.json을 생성하고 macOS, Linux 또는 Windows에서 시작을 설정합니다. macOS에서는 TV 계정으로 Stremio 5에 로그인하고, Linux/Windows에서는 마법사에 애드온 URL을 입력하세요. --yes는 기본값을 적용하고, --no-service는 설정만 저장하며, --lang은 언어를 선택합니다. 기존 토큰과 다운로드는 유지됩니다.",
+    "nonInteractive": "대화형 설정은 터미널에서 실행하거나 --yes로 기본값을 적용하세요."
   }
 }

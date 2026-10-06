@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Instali la servilon",
-      "body": "En macOS ensalutu al Stremio 5 per la televidila konto. En Linux aŭ Windows rulu npm run setup, aldonu agorditajn manifestajn URL-ojn al sources en config.json kaj agordu autoDiscoverAddons al false. Rulu npm run install:service en ĉiuj tri sistemoj. La servilo ekfunkcias kaj aŭtomate lanĉiĝas ĉe ensaluto per LaunchAgent, systemd aŭ Taskplanilo. Stremio povas resti fermita."
+      "body": "Rulu npm run setup por krei config.json kaj agordi lanĉon en macOS, Linux aŭ Windows. En macOS, ensalutu en Stremio 5 per la konto de la televidilo; en Linux/Windows, enigu la aldonaĵajn URL-ojn en la asistanto. --yes akceptas defaŭltojn, --no-service nur konservas la agordon, kaj --lang elektas lingvon. Ekzistantaj ĵetonoj kaj elŝutoj estas konservataj."
     },
     "connect": {
       "title": "Konekti la televidilon",
@@ -56,5 +56,27 @@
     "noDisk": "Nesufiĉa libera diskospaco.",
     "notFound": "Ne trovita.",
     "invalidMethod": "Nevalida metodo."
+  },
+  "cli": {
+    "intro": "Enter konservas la proponitan valoron. Ctrl+C nuligas antaŭ konservado.",
+    "port": "Pordo (1–65535)",
+    "address": "Adreso de la komputilo atingebla de la televidilo (HTTP/HTTPS)",
+    "cache": "Kaŝmemora dosierujo",
+    "budget": "Kaŝmemora limo (GiB)",
+    "reserve": "Rezervita libera spaco (GiB)",
+    "discover": "Malkovri aldonaĵojn de Stremio 5 en ĉi tiu Mac",
+    "keepAddons": "Konservi la konservitajn aldonaĵojn",
+    "addons": "Enigu la agorditajn URL-ojn de aldonaĵoj, po unu. Malplena respondo finas. Ĉi tiuj adresoj restas privataj.",
+    "addon": "URL de la aldonaĵa manifesto",
+    "startup": "Lanĉi nun kaj aŭtomate ĉe ensaluto",
+    "yes": "Jes",
+    "no": "Ne",
+    "invalid": "Nevalida valoro. Provu denove.",
+    "saved": "Agordo konservita",
+    "ready": "Servilo preta",
+    "cancelled": "Agordado nuligita",
+    "connect": "Malfermu la adreson en status-url.txt kaj elektu Instali en Stremio.",
+    "help": "Rulu npm run setup por krei config.json kaj agordi lanĉon en macOS, Linux aŭ Windows. En macOS, ensalutu en Stremio 5 per la konto de la televidilo; en Linux/Windows, enigu la aldonaĵajn URL-ojn en la asistanto. --yes akceptas defaŭltojn, --no-service nur konservas la agordon, kaj --lang elektas lingvon. Ekzistantaj ĵetonoj kaj elŝutoj estas konservataj.",
+    "nonInteractive": "Uzu terminalon por interaga agordado aŭ --yes por akcepti defaŭltojn."
   }
 }

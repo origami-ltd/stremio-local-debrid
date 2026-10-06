@@ -16,17 +16,17 @@ Node.js 24 vagy újabb, szabad lemezterület és egymást elérő számítógép
 
 ## Kiszolgáló telepítése
 
-macOS alatt jelentkezz be a Stremio 5-be a tévé fiókjával. Linux vagy Windows alatt futtasd az npm run setup parancsot, add a beállított manifest-URL-eket a config.json sources listájához és állítsd az autoDiscoverAddons értékét false-ra. Mindhárom rendszeren futtasd az npm run install:service parancsot. A kiszolgáló elindul és bejelentkezéskor automatikusan indul LaunchAgent, systemd vagy Feladatütemező segítségével. A Stremio bezárható.
+Futtassa az npm run setup parancsot a config.json létrehozásához és az indítás beállításához macOS, Linux vagy Windows rendszeren. macOS-en jelentkezzen be a Stremio 5-be a TV fiókjával; Linux/Windowson adja meg a bővítmények URL-jeit a varázslóban. A --yes elfogadja az alapértékeket, a --no-service csak a beállítást menti, a --lang pedig nyelvet választ. A meglévő tokenek és letöltések megmaradnak.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

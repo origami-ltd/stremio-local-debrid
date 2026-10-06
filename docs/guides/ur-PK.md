@@ -16,17 +16,17 @@ Node.js 24 یا جدید تر، کافی خالی جگہ اور ایک ہی قا
 
 ## سرور ترتیب دیں
 
-macOS پر ٹی وی والے اکاؤنٹ سے Stremio 5 میں داخل ہوں۔ Linux یا Windows پر npm run setup چلائیں، ترتیب شدہ ایڈ آنز کے manifest پتے config.json کے sources میں ڈالیں اور autoDiscoverAddons کو false کریں۔ تینوں نظاموں پر npm run install:service سرور شروع کرتا اور لاگ ان پر خودکار آغاز درج کرتا ہے، بالترتیب LaunchAgent، systemd صارف سروس اور Task Scheduler کے ذریعے۔ Stremio بند رہ سکتا ہے۔ نجی config.json شائع نہ کریں۔
+config.json بنانے اور macOS، Linux یا Windows میں آغاز ترتیب دینے کے لیے npm run setup چلائیں۔ macOS میں ٹی وی کے اکاؤنٹ سے Stremio 5 میں لاگ ان کریں؛ Linux/Windows میں وزرڈ میں ایڈ آن URLs درج کریں۔ --yes طے شدہ قدریں قبول کرتا ہے، --no-service صرف ترتیب محفوظ کرتا ہے اور --lang زبان منتخب کرتا ہے۔ موجودہ ٹوکن اور ڈاؤن لوڈ برقرار رہتے ہیں۔
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

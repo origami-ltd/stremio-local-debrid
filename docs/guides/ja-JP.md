@@ -16,17 +16,17 @@ Node.js 24以降、十分な空き容量、相互に接続できる同じネッ�
 
 ## サーバーの設定
 
-macOSではテレビと同じアカウントでStremio 5にログインします。LinuxやWindowsではnpm run setupを実行し、設定済みアドオンのmanifest URLをconfig.jsonのsourcesに追加してautoDiscoverAddonsをfalseにします。3つのOSでnpm run install:serviceを実行すると、サーバーを起動しログイン時の自動起動を登録します。それぞれLaunchAgent、systemdユーザーサービス、Task Schedulerを使います。Stremioは閉じて構いません。非公開のconfig.jsonを公開しないでください。
+npm run setupを実行するとconfig.jsonを作成し、macOS、Linux、Windowsで起動を設定できます。macOSではテレビと同じアカウントでStremio 5にログインし、Linux/WindowsではウィザードにアドオンURLを入力してください。--yesは既定値を使用し、--no-serviceは設定のみを保存し、--langは言語を選択します。既存のトークンとダウンロードは保持されます。
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

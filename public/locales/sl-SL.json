@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Namestitev strežnika",
-      "body": "V macOS se prijavite v Stremio 5 z računom televizorja. V Linuxu ali Windows zaženite npm run setup, dodajte nastavljene naslove manifestov v sources v config.json in nastavite autoDiscoverAddons na false. V vseh treh sistemih zaženite npm run install:service. Strežnik se zažene in samodejno starta ob prijavi prek LaunchAgenta, systemd ali razporejevalnika opravil. Stremio je lahko zaprt."
+      "body": "Zaženite npm run setup za izdelavo config.json in nastavitev zagona v macOS, Linuxu ali Windows. V macOS se prijavite v Stremio 5 z računom TV; v Linuxu/Windows vnesite URL-je dodatkov v čarovniku. --yes sprejme privzete vrednosti, --no-service samo shrani nastavitve, --lang pa izbere jezik. Obstoječi žetoni in prenosi se ohranijo."
     },
     "connect": {
       "title": "Povezava televizorja",
@@ -56,5 +56,27 @@
     "noDisk": "Premalo prostega prostora na disku.",
     "notFound": "Ni najdeno.",
     "invalidMethod": "Neveljavna metoda."
+  },
+  "cli": {
+    "intro": "Enter ohrani predlagano vrednost. Ctrl+C prekliče pred shranjevanjem.",
+    "port": "Vrata (1–65535)",
+    "address": "Naslov računalnika, dostopen s TV (HTTP/HTTPS)",
+    "cache": "Mapa predpomnilnika",
+    "budget": "Omejitev predpomnilnika (GiB)",
+    "reserve": "Rezerviran prosti prostor (GiB)",
+    "discover": "Odkriti dodatke Stremio 5 na tem Macu",
+    "keepAddons": "Ohraniti shranjene dodatke",
+    "addons": "Vnesite nastavljene URL-je dodatkov enega za drugim. Prazen odgovor zaključi seznam. Naslovi ostanejo zasebni.",
+    "addon": "URL manifesta dodatka",
+    "startup": "Zagnati zdaj in samodejno ob prijavi",
+    "yes": "Da",
+    "no": "Ne",
+    "invalid": "Neveljavna vrednost. Poskusite znova.",
+    "saved": "Nastavitve shranjene",
+    "ready": "Strežnik pripravljen",
+    "cancelled": "Nastavitev preklicana",
+    "connect": "Odprite naslov v status-url.txt in izberite Namesti v Stremio.",
+    "help": "Zaženite npm run setup za izdelavo config.json in nastavitev zagona v macOS, Linuxu ali Windows. V macOS se prijavite v Stremio 5 z računom TV; v Linuxu/Windows vnesite URL-je dodatkov v čarovniku. --yes sprejme privzete vrednosti, --no-service samo shrani nastavitve, --lang pa izbere jezik. Obstoječi žetoni in prenosi se ohranijo.",
+    "nonInteractive": "Za interaktivno nastavitev uporabite terminal ali --yes za privzete vrednosti."
   }
 }

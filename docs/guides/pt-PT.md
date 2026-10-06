@@ -16,17 +16,17 @@ O servidor consulta os addons instalados, preserva as respetivas configurações
 
 ## Preparar o servidor
 
-No macOS, inicie sessão no Stremio 5 com a conta da televisão. No Linux ou Windows, execute npm run setup, adicione os URLs configurados dos manifests a sources em config.json e defina autoDiscoverAddons como false. Execute npm run install:service em qualquer dos três sistemas. O instalador inicia o servidor e ativa o arranque automático ao iniciar sessão com LaunchAgent, systemd ou Agendador de Tarefas. O Stremio pode ficar fechado.
+Execute npm run setup para gerar config.json e configurar o arranque no macOS, Linux ou Windows. No macOS, inicie sessão no Stremio 5 com a conta da TV; no Linux/Windows, introduza os URLs dos addons no assistente. --yes aceita os valores predefinidos, --no-service apenas guarda a configuração e --lang escolhe o idioma. Os tokens e downloads existentes são preservados.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 

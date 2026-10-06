@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "سرور ترتیب دیں",
-      "body": "macOS پر ٹی وی والے اکاؤنٹ سے Stremio 5 میں داخل ہوں۔ Linux یا Windows پر npm run setup چلائیں، ترتیب شدہ ایڈ آنز کے manifest پتے config.json کے sources میں ڈالیں اور autoDiscoverAddons کو false کریں۔ تینوں نظاموں پر npm run install:service سرور شروع کرتا اور لاگ ان پر خودکار آغاز درج کرتا ہے، بالترتیب LaunchAgent، systemd صارف سروس اور Task Scheduler کے ذریعے۔ Stremio بند رہ سکتا ہے۔ نجی config.json شائع نہ کریں۔"
+      "body": "config.json بنانے اور macOS، Linux یا Windows میں آغاز ترتیب دینے کے لیے npm run setup چلائیں۔ macOS میں ٹی وی کے اکاؤنٹ سے Stremio 5 میں لاگ ان کریں؛ Linux/Windows میں وزرڈ میں ایڈ آن URLs درج کریں۔ --yes طے شدہ قدریں قبول کرتا ہے، --no-service صرف ترتیب محفوظ کرتا ہے اور --lang زبان منتخب کرتا ہے۔ موجودہ ٹوکن اور ڈاؤن لوڈ برقرار رہتے ہیں۔"
     },
     "connect": {
       "title": "ٹی وی جوڑیں",
@@ -56,5 +56,27 @@
     "noDisk": "ڈسک پر کافی خالی جگہ نہیں۔",
     "notFound": "نہیں ملا۔",
     "invalidMethod": "طریقہ غلط ہے۔"
+  },
+  "cli": {
+    "intro": "Enter مجوزہ قدر برقرار رکھتا ہے۔ Ctrl+C محفوظ کرنے سے پہلے منسوخ کرتا ہے۔",
+    "port": "پورٹ (1–65535)",
+    "address": "کمپیوٹر کا پتہ جس تک ٹی وی پہنچ سکے (HTTP/HTTPS)",
+    "cache": "کیش فولڈر",
+    "budget": "کیش کی حد (GiB)",
+    "reserve": "محفوظ خالی جگہ (GiB)",
+    "discover": "اس Mac پر Stremio 5 کے ایڈ آنز دریافت کریں",
+    "keepAddons": "محفوظ ایڈ آنز برقرار رکھیں",
+    "addons": "ترتیب شدہ ایڈ آن URLs ایک ایک کر کے درج کریں۔ خالی جواب فہرست ختم کرتا ہے۔ یہ پتے نجی رہتے ہیں۔",
+    "addon": "ایڈ آن manifest کا URL",
+    "startup": "ابھی اور لاگ ان پر خودکار طور پر شروع کریں",
+    "yes": "ہاں",
+    "no": "نہیں",
+    "invalid": "غلط قدر۔ دوبارہ کوشش کریں۔",
+    "saved": "ترتیب محفوظ ہوگئی",
+    "ready": "سرور تیار ہے",
+    "cancelled": "سیٹ اپ منسوخ ہوگیا",
+    "connect": "status-url.txt کا پتہ کھولیں اور Stremio میں انسٹال کریں منتخب کریں۔",
+    "help": "config.json بنانے اور macOS، Linux یا Windows میں آغاز ترتیب دینے کے لیے npm run setup چلائیں۔ macOS میں ٹی وی کے اکاؤنٹ سے Stremio 5 میں لاگ ان کریں؛ Linux/Windows میں وزرڈ میں ایڈ آن URLs درج کریں۔ --yes طے شدہ قدریں قبول کرتا ہے، --no-service صرف ترتیب محفوظ کرتا ہے اور --lang زبان منتخب کرتا ہے۔ موجودہ ٹوکن اور ڈاؤن لوڈ برقرار رہتے ہیں۔",
+    "nonInteractive": "تعاملی سیٹ اپ کے لیے ٹرمینل استعمال کریں یا طے شدہ قدروں کے لیے --yes دیں۔"
   }
 }

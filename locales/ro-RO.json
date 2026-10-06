@@ -30,7 +30,7 @@
     },
     "setup": {
       "title": "Instalarea serverului",
-      "body": "Pe macOS autentifică-te în Stremio 5 cu contul televizorului. Pe Linux sau Windows rulează npm run setup, adaugă URL-urile configurate ale manifestelor în sources din config.json și setează autoDiscoverAddons la false. Rulează npm run install:service pe toate cele trei sisteme. Serverul pornește și este înregistrat pentru pornire automată la autentificare prin LaunchAgent, systemd sau Task Scheduler. Stremio poate rămâne închis."
+      "body": "Rulați npm run setup pentru a genera config.json și a configura pornirea pe macOS, Linux sau Windows. Pe macOS, conectați Stremio 5 la contul TV-ului; pe Linux/Windows, introduceți URL-urile addonurilor în asistent. --yes acceptă valorile implicite, --no-service salvează doar configurația, iar --lang alege limba. Tokenurile și descărcările existente sunt păstrate."
     },
     "connect": {
       "title": "Conectarea televizorului",
@@ -56,5 +56,27 @@
     "noDisk": "Spațiu liber insuficient pe disc.",
     "notFound": "Nu a fost găsit.",
     "invalidMethod": "Metodă invalidă."
+  },
+  "cli": {
+    "intro": "Enter păstrează valoarea propusă. Ctrl+C anulează înainte de salvare.",
+    "port": "Port (1–65535)",
+    "address": "Adresa calculatorului accesibilă de pe TV (HTTP/HTTPS)",
+    "cache": "Dosarul cache",
+    "budget": "Limita cache (GiB)",
+    "reserve": "Spațiu liber rezervat (GiB)",
+    "discover": "Detectarea addonurilor din Stremio 5 pe acest Mac",
+    "keepAddons": "Păstrarea addonurilor salvate",
+    "addons": "Introduceți URL-urile configurate ale addonurilor, pe rând. Un răspuns gol încheie lista. Adresele rămân private.",
+    "addon": "URL-ul manifestului addonului",
+    "startup": "Pornire acum și automat la autentificare",
+    "yes": "Da",
+    "no": "Nu",
+    "invalid": "Valoare nevalidă. Încercați din nou.",
+    "saved": "Configurație salvată",
+    "ready": "Server pregătit",
+    "cancelled": "Configurare anulată",
+    "connect": "Deschideți adresa din status-url.txt și alegeți Instalează în Stremio.",
+    "help": "Rulați npm run setup pentru a genera config.json și a configura pornirea pe macOS, Linux sau Windows. Pe macOS, conectați Stremio 5 la contul TV-ului; pe Linux/Windows, introduceți URL-urile addonurilor în asistent. --yes acceptă valorile implicite, --no-service salvează doar configurația, iar --lang alege limba. Tokenurile și descărcările existente sunt păstrate.",
+    "nonInteractive": "Folosiți un terminal pentru configurarea interactivă sau --yes pentru valorile implicite."
   }
 }

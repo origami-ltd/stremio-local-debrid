@@ -16,17 +16,17 @@ Cal Node.js 24 o posterior, espai lliure i un ordinador i televisor accessibles 
 
 ## Instal·lar el servidor
 
-A macOS, inicia sessió a Stremio 5 amb el compte del televisor. A Linux o Windows, executa npm run setup, afegeix els URL configurats dels manifests a sources de config.json i posa autoDiscoverAddons a false. Executa npm run install:service als tres sistemes. El servidor s'inicia i arrenca automàticament en iniciar sessió amb LaunchAgent, systemd o el Planificador de tasques. Stremio pot estar tancat.
+Executeu npm run setup per generar config.json i configurar l'inici a macOS, Linux o Windows. A macOS, inicieu sessió a Stremio 5 amb el compte de la TV; a Linux/Windows, introduïu els URL dels complements a l'assistent. --yes accepta els valors predeterminats, --no-service només desa la configuració i --lang tria l'idioma. Es conserven els tokens i les baixades existents.
 
 ```sh
 git clone https://github.com/origami-ltd/stremio-local-debrid.git
 cd stremio-local-debrid
 npm ci
-npm run install:service
+npm run setup
 ```
 
 ```sh
-npm run setup
+npm run setup -- --no-service
 npm start
 ```
 
