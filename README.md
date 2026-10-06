@@ -101,7 +101,7 @@ Listing sources does not start a video download. A `HEAD` request may retrieve t
 
 Defaults are **100 GiB** of cached selected files and **10 GiB** of reserved free disk space. When space is needed, completed, least recently used torrents are removed first. Active readers and unfinished downloads are protected. Oversized files are rejected. If free space falls below the reserve, downloads stop; free space and select the source again to resume. BitTorrent piece boundaries, metadata and filesystem allocation mean physical disk use can differ slightly from the selected-file budget.
 
-The generated `config.json` is private and ignored by Git. [config.example.json](config.example.json) documents the basic shape.
+The generated `config.json` is private and ignored by Git. [config.json.example](config.json.example) is the public example, with empty credentials and no configured providers. Copy it to `config.json` and run `npm run setup`, or let setup generate the configuration directly.
 
 | Setting | Purpose |
 | --- | --- |

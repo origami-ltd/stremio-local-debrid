@@ -83,7 +83,7 @@ export async function installStartup(runtime, options = {}) {
         catch (error) { if (attempt === 3) throw error; await delay(1000); }
       }
     }
-    if (registered) execute('launchctl', ['kickstart', '-k', `${domain}/local.stremio.cache`]);
+    execute('launchctl', ['kickstart', ...(registered ? ['-k'] : []), `${domain}/local.stremio.cache`]);
     return plist;
   }
   if (platform === 'linux') {

@@ -38,7 +38,8 @@ test('platform startup files safely handle spaces, quotes and systemd specifiers
     const plist = await readFile(mac, 'utf8');
     assert.ok(plist.includes('&amp;'));
     assert.ok(plist.includes('&apos;'));
-    assert.deepEqual(calls.at(-1), { file: 'launchctl', args: ['bootstrap', 'gui/123', mac] });
+    assert.ok(calls.some(call => call.file === 'launchctl' && call.args[0] === 'bootstrap' && call.args[2] === mac));
+    assert.deepEqual(calls.at(-1), { file: 'launchctl', args: ['kickstart', 'gui/123/local.stremio.cache'] });
     let checks = 0;
     const shutdown = [];
     await stopStartup(runtime, { ...options, platform: 'darwin', execute: (file, args) => { shutdown.push({ file, args }); if (args[0] === 'print' && ++checks === 3) throw new Error('unloaded'); } });
