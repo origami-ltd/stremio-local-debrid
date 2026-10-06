@@ -59,7 +59,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=${systemdQuote(runtime)}
+WorkingDirectory=${String(runtime).replaceAll('%', '%%')}
 ExecStart=${systemdQuote(node)} ${systemdQuote(server)}
 Restart=always
 RestartSec=10
