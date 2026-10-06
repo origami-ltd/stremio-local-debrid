@@ -9,3 +9,5 @@ Stremio Local Debrid is maintained by [Origami Ltd](https://github.com/origami-l
 - [mit-proof-of-usage-license](https://github.com/origami-ltd/mit-proof-of-usage-license), CC0 template — MIT-PoU license text. Automated usage is recorded in [proof-of-usage PR #3](https://github.com/origami-ltd/mit-proof-of-usage-license/pull/3). Provenance hash: `34a31420b4990782aa4f5e7dc7d692581b3c0746047ca81f170a0f0c1be473ac`.
 
 The project is independent of Stremio and is not an official Stremio service. Dependency distributions retain their own license notices in their packages.
+
+Automated initial implementation of [stremio-local-debrid](https://github.com/origami-ltd/stremio-local-debrid) is recorded on the designated proof-of-usage branch. Provenance hash: `314eb09cc117162bc2facd85d9fa41358a96c8afe27e4847257b6970619cbc05`.
