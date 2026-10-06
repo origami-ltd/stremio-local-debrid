@@ -1,0 +1,60 @@
+{
+  "localeName": "Bahasa Indonesia",
+  "name": "Cache Lokal",
+  "description": "Komputer Anda mengunduh dan menyimpan torrent dari addon Stremio, lalu mengalirkan video ke TV melalui jaringan lokal.",
+  "install": "Pasang di Stremio",
+  "addonUrl": "Alamat addon",
+  "file": "Berkas",
+  "status": "Status",
+  "progress": "Kemajuan",
+  "cached": "Tersimpan",
+  "downloading": "Mengunduh",
+  "empty": "Belum ada unduhan.",
+  "sources": "Addon yang terdeteksi",
+  "language": "Bahasa",
+  "documentation": "Panduan pemasangan",
+  "urlPrompt": "Tempel alamat addon pribadi yang ditampilkan server lokal Anda.",
+  "invalidUrl": "Masukkan alamat addon HTTP atau HTTPS yang berakhir dengan /manifest.json.",
+  "guide": {
+    "problem": {
+      "title": "Mengapa proyek ini ada",
+      "body": "TV lambat bisa kesulitan mengunduh torrent sambil memutar video. Stremio Local Debrid memindahkan unduhan dan penyimpanan ke komputer. TV menerima video HTTP melalui jaringan rumah. Cache tetap Anda kendalikan tanpa akun debrid cloud berbayar."
+    },
+    "how": {
+      "title": "Cara kerja",
+      "body": "Server meminta sumber dari addon terpasang yang kompatibel, dengan mempertahankan alamat dan konfigurasinya. Hash torrent, magnet dan tautan .torrent menjadi sumber Cache Lokal. Memilih sumber memulai unduhan di komputer. Berkas duplikat berbagi cache dan trackernya digabungkan. Tautan video langsung dan layanan eksternal tidak dikonversi."
+    },
+    "requirements": {
+      "title": "Persyaratan",
+      "body": "Gunakan Node.js 24 atau lebih baru, ruang disk cukup, serta komputer dan TV di jaringan yang saling terjangkau. Penemuan akun otomatis mendukung Stremio 5 di macOS. Linux dan Windows memakai daftar addon manual. Android TV, Google TV dan Fire TV adalah target utama; klien lain mungkin memerlukan HTTPS dan codec yang kompatibel."
+    },
+    "setup": {
+      "title": "Menyiapkan server",
+      "body": "Di macOS, masuk ke Stremio 5 memakai akun TV. Di Linux atau Windows, jalankan npm run setup, tambahkan URL manifest addon yang telah dikonfigurasi ke sources dalam config.json dan atur autoDiscoverAddons ke false. Di ketiga sistem, npm run install:service menjalankan server dan mengatur mulai otomatis saat login melalui LaunchAgent, layanan pengguna systemd atau Task Scheduler. Stremio boleh ditutup. Jangan publikasikan config.json pribadi."
+    },
+    "connect": {
+      "title": "Menghubungkan TV",
+      "body": "Buka alamat dalam state/status-url.txt, pilih bahasa, lalu klik Pasang di Stremio atau tempel alamat addon ke kolom pemasangan. Segarkan addon atau buka ulang Stremio di TV dengan akun yang sama. Pilih sumber Cache Lokal untuk film atau episode. Sumber asli bekerja di perangkat yang membukanya. Addon akun disinkronkan setiap 60 detik."
+    },
+    "limits": {
+      "title": "Cache dan pemutaran",
+      "body": "Unduhan berlanjut setelah pemutar ditutup dan dilanjutkan setelah server dimulai ulang. Hanya berkas terpilih yang diunduh. Batas bawaan 100 GiB dengan cadangan ruang kosong 10 GiB; torrent selesai yang paling jarang digunakan dihapus saat perlu ruang. Waktu mulai bergantung pada peer dan jaringan. TV tetap mendekode video; tidak ada transcoding. Jaga komputer tetap aktif dan terjangkau. Jika IP berubah, perbarui baseUrl dan pasang ulang addon."
+    },
+    "privacy": {
+      "title": "Privasi dan lisensi",
+      "body": "URL addon memuat token akses: jaga kerahasiaannya. Penemuan akun membaca profil Stremio lokal dan mengirim kunci sesi hanya ke API resmi, tanpa menyimpan salinannya. Alamat addon disimpan secara privat. Proyek tidak memuat katalog media atau telemetri. Peer BitTorrent dapat melihat IP komputer. Gunakan konten yang berhak Anda akses. MIT-PoU mewajibkan pencatatan penggunaan dan atribusi untuk sistem otomatis."
+    }
+  },
+  "errors": {
+    "invalidRange": "Rentang byte tidak valid.",
+    "invalidSource": "Sumber tidak valid.",
+    "invalidTorrent": "Torrent tidak valid.",
+    "metadataTimeout": "Metadata torrent tidak dapat diperoleh. Coba sumber lain.",
+    "unsafePath": "Jalur berkas tidak valid.",
+    "missingVideo": "Berkas video tidak ditemukan.",
+    "cacheFull": "Cache penuh atau ruang kosong komputer tidak cukup.",
+    "noDisk": "Ruang disk kosong tidak cukup.",
+    "notFound": "Tidak ditemukan.",
+    "invalidMethod": "Metode tidak valid."
+  }
+}

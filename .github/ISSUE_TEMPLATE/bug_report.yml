@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a cache, source or installation problem.
+body:
+  - type: markdown
+    attributes:
+      value: "Remove private tokens, configured addon URLs and session keys before posting."
+  - type: input
+    id: version
+    attributes:
+      label: Version and operating system
+      placeholder: "1.2.0, Windows 11, Node.js 24"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened and what you expected
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs with secrets removed
+      render: text

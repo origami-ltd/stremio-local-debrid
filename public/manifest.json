@@ -1,0 +1,15 @@
+{
+  "id": "local.stremio.cache",
+  "version": "1.2.0",
+  "name": "Stremio Local Debrid",
+  "description": "Move torrent downloads from your TV to your computer. Self-hosted cache for the torrent sources returned by your installed Stremio addons. Requires a local server; configure your own instance to install.",
+  "logo": "https://origami-ltd.github.io/stremio-local-debrid/assets/logo.png",
+  "resources": ["stream"],
+  "types": ["movie", "series", "anime", "other"],
+  "catalogs": [],
+  "behaviorHints": {
+    "configurable": true,
+    "configurationRequired": true,
+    "p2p": true
+  }
+}

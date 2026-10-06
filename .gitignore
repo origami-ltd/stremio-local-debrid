@@ -1,0 +1,11 @@
+node_modules/
+config.json
+state/
+*.log
+cache/
+.DS_Store
+.env
+.env.*
+*.torrent
+*.mp4
+*.mkv

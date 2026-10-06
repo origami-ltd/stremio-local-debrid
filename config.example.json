@@ -1,0 +1,15 @@
+{
+  "host": "0.0.0.0",
+  "port": 7810,
+  "baseUrl": "",
+  "token": "",
+  "cacheDir": "./cache",
+  "stateDir": "./state",
+  "maxCacheBytes": 107374182400,
+  "minFreeBytes": 10737418240,
+  "autoDiscoverAddons": false,
+  "addonRefreshMs": 60000,
+  "preventSleep": false,
+  "language": "en-US",
+  "sources": []
+}

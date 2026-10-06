@@ -1,0 +1,60 @@
+{
+  "localeName": "Hrvatski",
+  "name": "Lokalna predmemorija",
+  "description": "Računalo preuzima i pohranjuje torrente iz vaših Stremio dodataka te šalje video televizoru preko lokalne mreže.",
+  "install": "Instaliraj u Stremio",
+  "addonUrl": "Adresa dodatka",
+  "file": "Datoteka",
+  "status": "Stanje",
+  "progress": "Napredak",
+  "cached": "U predmemoriji",
+  "downloading": "Preuzimanje",
+  "empty": "Nema započetih preuzimanja.",
+  "sources": "Otkriveni dodaci",
+  "language": "Jezik",
+  "documentation": "Upute za instalaciju",
+  "urlPrompt": "Zalijepite privatnu adresu dodatka prikazanu na lokalnom poslužitelju.",
+  "invalidUrl": "Unesite HTTP ili HTTPS adresu koja završava s /manifest.json.",
+  "guide": {
+    "problem": {
+      "title": "Zašto postoji",
+      "body": "Spor televizor može teško istodobno tražiti peerove, preuzimati dijelove torrenta i reproducirati video. Stremio Local Debrid premješta preuzimanje i pohranu na računalo. Televizor prima HTTP video preko kućne mreže. Upravljate vlastitom predmemorijom bez plaćenog debrid računa u oblaku."
+    },
+    "how": {
+      "title": "Kako radi",
+      "body": "Poslužitelj traži izvore od instaliranih dodataka i čuva njihove postavke. Hashovi, magneti i .torrent poveznice postaju izvori lokalne predmemorije. Odabir pokreće preuzimanje na računalu i prijenos odabrane datoteke televizoru. Duplikati dijele predmemoriju i trackere. Izravne video poveznice i vanjske usluge ne pretvaraju se."
+    },
+    "requirements": {
+      "title": "Zahtjevi",
+      "body": "Potrebni su Node.js 24 ili noviji, slobodan prostor te računalo i televizor dostupni u istoj mreži. Automatsko otkrivanje računa podržava Stremio 5 za macOS. Linux i Windows koriste ručni popis dodataka. Glavni uređaji su Android TV, Google TV i Fire TV; drugi klijenti mogu zahtijevati HTTPS i kompatibilne kodeke."
+    },
+    "setup": {
+      "title": "Instalacija poslužitelja",
+      "body": "Na macOS-u prijavite se u Stremio 5 računom televizora. Na Linuxu ili Windowsu pokrenite npm run setup, dodajte konfigurirane URL-ove manifesta u sources u config.json i postavite autoDiscoverAddons na false. Na sva tri sustava pokrenite npm run install:service. Poslužitelj se pokreće i automatski se uključuje pri prijavi putem LaunchAgenta, systemd-a ili Planera zadataka. Stremio može ostati zatvoren."
+    },
+    "connect": {
+      "title": "Povezivanje televizora",
+      "body": "Otvorite adresu iz state/status-url.txt, odaberite jezik i Instaliraj u Stremio ili zalijepite adresu dodatka u polje za instalaciju. Koristite isti račun na televizoru te osvježite dodatke ili ponovno pokrenite Stremio. Za film ili epizodu odaberite Lokalna predmemorija. Izvorni izvori i dalje koriste uređaj koji ih otvara. Popis računa sinkronizira se svakih 60 sekundi."
+    },
+    "limits": {
+      "title": "Predmemorija i reprodukcija",
+      "body": "Preuzimanja se nastavljaju nakon zatvaranja reproduktora i obnavljaju nakon ponovnog pokretanja poslužitelja. Preuzima se samo odabrana datoteka. Zadano je 100 GiB predmemorije i 10 GiB rezerviranog slobodnog prostora; završeni, rijetko korišteni torrenti brišu se po potrebi. Početak ovisi o peerovima i mreži. Nema transkodiranja: televizor dekodira video. Držite računalo budnim i dostupnim. Ako se IP promijeni, ažurirajte baseUrl i ponovno instalirajte dodatak."
+    },
+    "privacy": {
+      "title": "Privatnost i licenca",
+      "body": "Adresa sadrži privatni token: ne objavljujte ga u prijavama ili snimkama zaslona. macOS čita postojeći profil i šalje ključ sesije samo službenom Stremio API-ju bez pohrane kopije. Konfigurirane adrese pohranjuju se privatno. Nema medijskog kataloga ni telemetrije. Peerovi mogu vidjeti IP računala. Koristite sadržaj kojem smijete pristupiti. MIT-PoU zahtijeva bilježenje uporabe i navođenje izvora za automatizirane sustave."
+    }
+  },
+  "errors": {
+    "invalidRange": "Nevažeći raspon bajtova.",
+    "invalidSource": "Nevažeći izvor.",
+    "invalidTorrent": "Nevažeći torrent.",
+    "metadataTimeout": "Nije moguće dohvatiti metapodatke torrenta. Pokušajte drugi izvor.",
+    "unsafePath": "Nevažeća putanja datoteke.",
+    "missingVideo": "Videodatoteka nije pronađena.",
+    "cacheFull": "Predmemorija je puna ili računalo nema dovoljno slobodnog prostora.",
+    "noDisk": "Nema dovoljno slobodnog prostora na disku.",
+    "notFound": "Nije pronađeno.",
+    "invalidMethod": "Nevažeća metoda."
+  }
+}

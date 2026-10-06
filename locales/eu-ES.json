@@ -1,0 +1,60 @@
+{
+  "localeName": "Euskara",
+  "name": "Cache lokala",
+  "description": "Ordenagailuak zure Stremio gehigarrien torrentak deskargatu eta gordetzen ditu, eta bideoa telebistara bidaltzen du sare lokalaren bidez.",
+  "install": "Instalatu Stremion",
+  "addonUrl": "Gehigarriaren helbidea",
+  "file": "Fitxategia",
+  "status": "Egoera",
+  "progress": "Aurrerapena",
+  "cached": "Cachean",
+  "downloading": "Deskargatzen",
+  "empty": "Ez da deskargarik hasi.",
+  "sources": "Detektatutako gehigarriak",
+  "language": "Hizkuntza",
+  "documentation": "Instalazio-gida",
+  "urlPrompt": "Itsatsi zerbitzari lokalak erakusten duen gehigarriaren helbide pribatua.",
+  "invalidUrl": "Sartu /manifest.json amaiera duen HTTP edo HTTPS helbidea.",
+  "guide": {
+    "problem": {
+      "title": "Zergatik sortu den",
+      "body": "Telebista motel batek zailtasunak izan ditzake pareak bilatzeko, torrent zatiak deskargatzeko eta bideoa aldi berean erreproduzitzeko. Stremio Local Debrid-ek deskarga eta biltegiratzea ordenagailura eramaten ditu. Telebistak HTTP bideoa jasotzen du etxeko sarean. Zure cachea kudeatzen duzu, hodeiko debrid kontu ordaindurik gabe."
+    },
+    "how": {
+      "title": "Nola dabil",
+      "body": "Zerbitzariak instalatutako gehigarriei iturriak eskatzen dizkie eta haien konfigurazioa mantentzen du. Hashak, magnet estekak eta .torrent estekak Cache lokala iturri bihurtzen dira. Bat hautatzeak deskarga hasten du ordenagailuan eta hautatutako fitxategia telebistara bidaltzen du. Bikoiztuek cachea eta tracker-ak partekatzen dituzte. Bideo-esteka zuzenak eta kanpoko zerbitzuak ez dira bihurtzen."
+    },
+    "requirements": {
+      "title": "Eskakizunak",
+      "body": "Node.js 24 edo berriagoa, diskoan leku librea eta sare berean elkarri iristeko gai diren ordenagailua eta telebista behar dira. Kontuaren detekzio automatikoak macOS-erako Stremio 5 onartzen du. Linux eta Windows-ek eskuzko gehigarri-zerrenda erabiltzen dute. Helburu nagusiak Android TV, Google TV eta Fire TV dira; beste bezeroek HTTPS eta codec bateragarriak eska ditzakete."
+    },
+    "setup": {
+      "title": "Zerbitzaria instalatu",
+      "body": "macOS-en hasi saioa Stremio 5-en telebistaren kontuarekin. Linux edo Windows-en exekutatu npm run setup, gehitu konfiguratutako manifest URL-ak config.json-eko sources zerrendara eta ezarri autoDiscoverAddons false gisa. Hiru sistemetan exekutatu npm run install:service. Zerbitzaria abiatzen da eta saioa hastean automatikoki abiatuko da LaunchAgent, systemd edo Ataza-antolatzailearen bidez. Stremio itxita egon daiteke."
+    },
+    "connect": {
+      "title": "Telebista konektatu",
+      "body": "Ireki state/status-url.txt-ko helbidea, hautatu hizkuntza eta Instalatu Stremion, edo itsatsi helbidea instalazio-eremuan. Erabili kontu bera telebistan eta eguneratu gehigarriak edo berrabiarazi Stremio. Filma edo atala irekitzean hautatu Cache lokala. Jatorrizko iturriek irekitzen dituen gailua erabiltzen jarraitzen dute. Kontuaren zerrenda 60 segundoan behin sinkronizatzen da."
+    },
+    "limits": {
+      "title": "Cachea eta erreprodukzioa",
+      "body": "Deskargek erreproduzitzailea itxi ondoren jarraitzen dute eta zerbitzaria berrabiaraztean berrekiten dira. Hautatutako fitxategia soilik deskargatzen da. Lehenetsita 100 GiB cache eta 10 GiB leku libre erreserbatua daude; amaitutako eta gutxi erabilitako torrentak ezabatzen dira leku behar denean. Hasiera pareen eta sarearen araberakoa da. Ez dago transkodetzerik: telebistak bideoa deskodetzen du. Mantendu ordenagailua esna eta erabilgarri. IPa aldatzen bada, eguneratu baseUrl eta berrinstalatu gehigarria."
+    },
+    "privacy": {
+      "title": "Pribatutasuna eta lizentzia",
+      "body": "Helbideak sarbide-token pribatua dauka: ez argitaratu arazoetan edo pantaila-argazkietan. macOS-ek lehendik dagoen profila irakurtzen du eta saio-gakoa Stremioren API ofizialera soilik bidaltzen du, kopiarik gorde gabe. Konfiguratutako helbideak pribatuki gordetzen dira. Ez dago media-katalogorik edo telemetriarik. Pareek ordenagailuaren IPa ikus dezakete. Erabili atzitzeko eskubidea duzun edukia. MIT-PoU-k erabilera-erregistroa eta iturriaren aipamena eskatzen dizkie sistema automatizatuei."
+    }
+  },
+  "errors": {
+    "invalidRange": "Byte-tarte baliogabea.",
+    "invalidSource": "Iturri baliogabea.",
+    "invalidTorrent": "Torrent baliogabea.",
+    "metadataTimeout": "Ezin izan dira torrentaren metadatuak lortu. Saiatu beste iturri batekin.",
+    "unsafePath": "Fitxategi-bide baliogabea.",
+    "missingVideo": "Bideo-fitxategia ez da aurkitu.",
+    "cacheFull": "Cachea beteta dago edo ordenagailuan ez dago leku libre nahikorik.",
+    "noDisk": "Diskoan ez dago leku libre nahikorik.",
+    "notFound": "Ez da aurkitu.",
+    "invalidMethod": "Metodo baliogabea."
+  }
+}

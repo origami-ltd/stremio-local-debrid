@@ -1,0 +1,29 @@
+{
+  "name": "stremio-local-debrid",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "setup": "node setup.mjs",
+    "install:service": "node install.mjs",
+    "install:mac": "node install.mjs",
+    "uninstall:service": "node uninstall.mjs",
+    "build:docs": "node scripts/build-docs.mjs",
+    "check:locales": "node scripts/check-locales.mjs",
+    "test": "node --test"
+  },
+  "description": "A self-hosted Stremio torrent cache that moves downloads from your TV to your computer.",
+  "license": "LicenseRef-MIT-PoU",
+  "author": "Origami Ltd",
+  "repository": { "type": "git", "url": "https://github.com/origami-ltd/stremio-local-debrid.git" },
+  "homepage": "https://origami-ltd.github.io/stremio-local-debrid/",
+  "bugs": { "url": "https://github.com/origami-ltd/stremio-local-debrid/issues" },
+  "dependencies": {
+    "parse-torrent": "11.0.24",
+    "webtorrent": "3.0.21"
+  }
+}

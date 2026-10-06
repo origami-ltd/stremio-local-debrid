@@ -1,0 +1,60 @@
+{
+  "localeName": "Eesti",
+  "name": "Kohalik vahemälu",
+  "description": "Arvuti laadib alla ja salvestab sinu Stremio lisade torrentid ning edastab video telerisse kohaliku võrgu kaudu.",
+  "install": "Paigalda Stremiosse",
+  "addonUrl": "Lisa aadress",
+  "file": "Fail",
+  "status": "Olek",
+  "progress": "Edenemine",
+  "cached": "Vahemälus",
+  "downloading": "Allalaadimine",
+  "empty": "Allalaadimisi pole alustatud.",
+  "sources": "Leitud lisad",
+  "language": "Keel",
+  "documentation": "Paigaldusjuhend",
+  "urlPrompt": "Kleebi kohaliku serveri näidatud lisa privaatne aadress.",
+  "invalidUrl": "Sisesta HTTP- või HTTPS-aadress, mille lõpus on /manifest.json.",
+  "guide": {
+    "problem": {
+      "title": "Miks projekt olemas on",
+      "body": "Aeglasel teleril võib olla raske korraga partnereid otsida, torrenti osi alla laadida ja videot esitada. Stremio Local Debrid viib allalaadimise ja salvestamise arvutisse. Teler saab HTTP-video koduvõrgu kaudu. Haldad oma vahemälu ilma tasulise pilve-debrid-kontota."
+    },
+    "how": {
+      "title": "Kuidas see töötab",
+      "body": "Server küsib allikaid paigaldatud lisadelt ja säilitab nende seadistused. Torrenti räsid, magnetid ja .torrent-lingid muutuvad Kohaliku vahemälu allikateks. Allika valimine käivitab arvutis allalaadimise ja saadab valitud faili telerisse. Duplikaadid jagavad vahemälu ja jälgijaid. Otseseid videolinke ja väliseid teenuseid ei teisendata."
+    },
+    "requirements": {
+      "title": "Nõuded",
+      "body": "Vaja on Node.js 24 või uuemat, vaba kettaruumi ning samas võrgus teineteist kättesaadavaid arvutit ja telerit. Konto automaatne tuvastus toetab macOS-i Stremio 5. Linux ja Windows kasutavad käsitsi määratud lisade loendit. Peamised sihtseadmed on Android TV, Google TV ja Fire TV; muud kliendid võivad vajada HTTPS-i ja sobivaid koodekeid."
+    },
+    "setup": {
+      "title": "Serveri paigaldamine",
+      "body": "Logi macOS-i Stremio 5-s sisse teleri kontoga. Linuxis või Windowsis käivita npm run setup, lisa seadistatud manifesti URL-id config.json-i sources-loendisse ja määra autoDiscoverAddons väärtuseks false. Käivita kõigis kolmes süsteemis npm run install:service. Server käivitub kohe ja automaatselt sisselogimisel LaunchAgenti, systemd või tegumiplaneerija abil. Stremio võib suletud olla."
+    },
+    "connect": {
+      "title": "Teleri ühendamine",
+      "body": "Ava state/status-url.txt-s salvestatud aadress, vali keel ja klõpsa Paigalda Stremiosse või kleebi lisa aadress paigaldusväljale. Kasuta teleris sama kontot ning värskenda lisasid või taaskäivita Stremio. Vali filmi või episoodi jaoks Kohalik vahemälu. Algsed allikad kasutavad endiselt neid avavat seadet. Konto lisasid sünkroonitakse iga 60 sekundi järel."
+    },
+    "limits": {
+      "title": "Vahemälu ja esitamine",
+      "body": "Allalaadimised jätkuvad pärast pleieri sulgemist ja taastuvad serveri taaskäivitamisel. Alla laaditakse ainult valitud fail. Vaikimisi on vahemälu 100 GiB ja vaba ruumi reserv 10 GiB; valmis, harva kasutatud torrentid eemaldatakse ruumivajadusel. Käivitumine sõltub partneritest ja võrgust. Ümberkodeerimist pole: teler dekodeerib video. Hoia arvuti ärkvel ja kättesaadav. IP muutumisel uuenda baseUrl ja paigalda lisa uuesti."
+    },
+    "privacy": {
+      "title": "Privaatsus ja litsents",
+      "body": "Lisa URL sisaldab privaatset pääsutokenit: ära avalda seda probleemides või kuvatõmmistes. macOS loeb olemasolevat profiili ja saadab seansivõtme ainult Stremio ametlikule API-le, koopiat salvestamata. Seadistatud aadresse hoitakse privaatselt. Meediakataloogi ega telemeetriat pole. Partnerid võivad näha arvuti IP-d. Kasuta sisu, millele sul on õigus. MIT-PoU nõuab automatiseeritud süsteemidelt kasutuse registreerimist ja viitamist."
+    }
+  },
+  "errors": {
+    "invalidRange": "Vigane baidivahemik.",
+    "invalidSource": "Vigane allikas.",
+    "invalidTorrent": "Vigane torrent.",
+    "metadataTimeout": "Torrenti metaandmeid ei õnnestunud hankida. Proovi teist allikat.",
+    "unsafePath": "Vigane failitee.",
+    "missingVideo": "Videofaili ei leitud.",
+    "cacheFull": "Vahemälu on täis või arvutis pole piisavalt vaba ruumi.",
+    "noDisk": "Kettal pole piisavalt vaba ruumi.",
+    "notFound": "Ei leitud.",
+    "invalidMethod": "Vigane meetod."
+  }
+}

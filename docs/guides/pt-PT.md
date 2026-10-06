@@ -1,0 +1,45 @@
+# Stremio Local Debrid — Português (Portugal)
+
+O computador descarrega e guarda os torrents dos seus addons do Stremio e transmite o vídeo para a televisão pela rede local.
+
+## Porque existe
+
+Uma televisão lenta pode ter dificuldade em procurar peers, descarregar partes de torrents e reproduzir vídeo ao mesmo tempo. O Stremio Local Debrid transfere as descargas e o armazenamento para o computador. A televisão recebe vídeo HTTP pela rede doméstica, com uma cache controlada por si e sem uma conta paga de debrid na nuvem.
+
+## Como funciona
+
+O servidor consulta os addons instalados, preserva as respetivas configurações e transforma hashes, magnets e ligações .torrent em fontes Cache Local. Selecionar uma fonte inicia a descarga no computador e transmite o ficheiro para a televisão. Os duplicados partilham a cache e os trackers. Ligações diretas de vídeo e serviços externos não são convertidos.
+
+## Requisitos
+
+É necessário Node.js 24 ou posterior, espaço livre no disco e comunicação entre computador e televisão na mesma rede. A descoberta automática da conta funciona com o Stremio 5 para macOS; Linux e Windows usam uma lista manual de addons. Android TV, Google TV e Fire TV são os principais destinos. Outros clientes podem exigir HTTPS e codecs compatíveis.
+
+## Preparar o servidor
+
+No macOS, inicie sessão no Stremio 5 com a conta da televisão. No Linux ou Windows, execute npm run setup, adicione os URLs configurados dos manifests a sources em config.json e defina autoDiscoverAddons como false. Execute npm run install:service em qualquer dos três sistemas. O instalador inicia o servidor e ativa o arranque automático ao iniciar sessão com LaunchAgent, systemd ou Agendador de Tarefas. O Stremio pode ficar fechado.
+
+```sh
+git clone https://github.com/origami-ltd/stremio-local-debrid.git
+cd stremio-local-debrid
+npm ci
+npm run install:service
+```
+
+```sh
+npm run setup
+npm start
+```
+
+## Ligar a televisão
+
+Abra o endereço guardado em state/status-url.txt. Escolha o idioma e clique em Instalar no Stremio ou cole o endereço do addon no campo de instalação. Na televisão, use a mesma conta e atualize os addons ou reinicie o Stremio. Abra um filme ou episódio e escolha Cache Local. As fontes originais continuam a usar o dispositivo que as abre. A lista da conta é sincronizada a cada 60 segundos.
+
+## Cache e reprodução
+
+As descargas continuam depois de fechar o leitor e retomam após reiniciar o servidor. Apenas o ficheiro selecionado é descarregado. Por predefinição, a cache tem 100 GiB e reserva 10 GiB livres; torrents completos menos utilizados são removidos quando falta espaço. O primeiro arranque depende dos peers e da rede. Não existe transcodificação: a televisão descodifica o vídeo. Mantenha o computador ligado e acessível. Se o IP mudar, atualize baseUrl e reinstale o addon.
+
+## Privacidade e licença
+
+O URL do addon contém um token privado: não o publique em issues ou capturas de ecrã. A descoberta no macOS lê o perfil existente e envia a chave de sessão apenas à API oficial do Stremio, sem guardar uma cópia. Os URLs configurados são privados. Não há catálogo de conteúdos nem telemetria. Os peers podem ver o IP do computador. Utilize conteúdos a que tem direito. MIT-PoU exige registo de utilização e créditos para sistemas automatizados.
+
+[Origami · GitHub](https://github.com/origami-ltd/stremio-local-debrid) · [MIT-PoU](../../LICENSE.md)

@@ -1,0 +1,206 @@
+[
+  {
+    "code": "ar-AR",
+    "name": "العربية"
+  },
+  {
+    "code": "be-BY",
+    "name": "Беларуская"
+  },
+  {
+    "code": "bg-BG",
+    "name": "Български"
+  },
+  {
+    "code": "bn-BD",
+    "name": "বাংলা"
+  },
+  {
+    "code": "ca-ES",
+    "name": "Català"
+  },
+  {
+    "code": "cs-CZ",
+    "name": "Čeština"
+  },
+  {
+    "code": "da-DK",
+    "name": "Dansk"
+  },
+  {
+    "code": "de-DE",
+    "name": "Deutsch"
+  },
+  {
+    "code": "el-GR",
+    "name": "Ελληνικά"
+  },
+  {
+    "code": "en-US",
+    "name": "English"
+  },
+  {
+    "code": "eo-EO",
+    "name": "Esperanto"
+  },
+  {
+    "code": "es-ES",
+    "name": "Español"
+  },
+  {
+    "code": "et-EE",
+    "name": "Eesti"
+  },
+  {
+    "code": "eu-ES",
+    "name": "Euskara"
+  },
+  {
+    "code": "fa-IR",
+    "name": "فارسی"
+  },
+  {
+    "code": "fi-FI",
+    "name": "Suomi"
+  },
+  {
+    "code": "fr-FR",
+    "name": "Français"
+  },
+  {
+    "code": "he-IL",
+    "name": "עברית"
+  },
+  {
+    "code": "hi-IN",
+    "name": "हिन्दी"
+  },
+  {
+    "code": "hr-HR",
+    "name": "Hrvatski"
+  },
+  {
+    "code": "hu-HU",
+    "name": "Magyar"
+  },
+  {
+    "code": "id-ID",
+    "name": "Bahasa Indonesia"
+  },
+  {
+    "code": "it-IT",
+    "name": "Italiano"
+  },
+  {
+    "code": "ja-JP",
+    "name": "日本語"
+  },
+  {
+    "code": "ko-KR",
+    "name": "한국어"
+  },
+  {
+    "code": "lt-LT",
+    "name": "Lietuvių"
+  },
+  {
+    "code": "mk-MK",
+    "name": "Македонски"
+  },
+  {
+    "code": "my-BM",
+    "name": "မြန်မာ"
+  },
+  {
+    "code": "nb-NO",
+    "name": "Norsk bokmål"
+  },
+  {
+    "code": "ne-NP",
+    "name": "नेपाली"
+  },
+  {
+    "code": "nl-NL",
+    "name": "Nederlands"
+  },
+  {
+    "code": "nn-NO",
+    "name": "Norsk nynorsk"
+  },
+  {
+    "code": "pa-IN",
+    "name": "ਪੰਜਾਬੀ"
+  },
+  {
+    "code": "pl-PL",
+    "name": "Polski"
+  },
+  {
+    "code": "pt-BR",
+    "name": "Português (Brasil)"
+  },
+  {
+    "code": "pt-PT",
+    "name": "Português (Portugal)"
+  },
+  {
+    "code": "ro-RO",
+    "name": "Română"
+  },
+  {
+    "code": "ru-RU",
+    "name": "Русский"
+  },
+  {
+    "code": "sk-SK",
+    "name": "Slovenčina"
+  },
+  {
+    "code": "sl-SL",
+    "name": "Slovenščina"
+  },
+  {
+    "code": "sr-RS",
+    "name": "Српски"
+  },
+  {
+    "code": "sv-SE",
+    "name": "Svenska"
+  },
+  {
+    "code": "ta-IN",
+    "name": "தமிழ்"
+  },
+  {
+    "code": "te-IN",
+    "name": "తెలుగు"
+  },
+  {
+    "code": "tr-TR",
+    "name": "Türkçe"
+  },
+  {
+    "code": "uk-UA",
+    "name": "Українська"
+  },
+  {
+    "code": "ur-PK",
+    "name": "اردو"
+  },
+  {
+    "code": "vi-VN",
+    "name": "Tiếng Việt"
+  },
+  {
+    "code": "zh-CN",
+    "name": "简体中文"
+  },
+  {
+    "code": "zh-HK",
+    "name": "繁體中文（香港）"
+  },
+  {
+    "code": "zh-TW",
+    "name": "繁體中文（台灣）"
+  }
+]

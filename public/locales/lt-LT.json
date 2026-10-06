@@ -1,0 +1,60 @@
+{
+  "localeName": "Lietuvių",
+  "name": "Vietinė talpykla",
+  "description": "Kompiuteris atsisiunčia ir saugo jūsų Stremio priedų torrentus, tada vietiniu tinklu siunčia vaizdo įrašą į televizorių.",
+  "install": "Įdiegti į Stremio",
+  "addonUrl": "Priedo adresas",
+  "file": "Failas",
+  "status": "Būsena",
+  "progress": "Eiga",
+  "cached": "Talpykloje",
+  "downloading": "Atsisiunčiama",
+  "empty": "Atsisiuntimai dar nepradėti.",
+  "sources": "Aptikti priedai",
+  "language": "Kalba",
+  "documentation": "Diegimo vadovas",
+  "urlPrompt": "Įklijuokite vietinio serverio rodomą privatų priedo adresą.",
+  "invalidUrl": "Įveskite HTTP arba HTTPS adresą, kuris baigiasi /manifest.json.",
+  "guide": {
+    "problem": {
+      "title": "Kodėl šis projektas sukurtas",
+      "body": "Lėtam televizoriui gali būti sunku vienu metu rasti tinklo dalyvius, atsisiųsti torrento dalis ir rodyti vaizdą. Stremio Local Debrid perkelia atsisiuntimą ir saugojimą į kompiuterį. Televizorius gauna HTTP vaizdą namų tinklu. Valdote savo talpyklą be mokamos debesijos debrid paskyros."
+    },
+    "how": {
+      "title": "Kaip tai veikia",
+      "body": "Serveris prašo šaltinių iš įdiegtų priedų ir išlaiko jų nuostatas. Torrento maišos, magnet ir .torrent nuorodos tampa Vietinės talpyklos šaltiniais. Pasirinkus šaltinį kompiuteris pradeda atsisiuntimą ir siunčia pasirinktą failą televizoriui. Dublikatai dalijasi talpykla ir sekikliais. Tiesioginės vaizdo nuorodos ir išorinės paslaugos nekeičiamos."
+    },
+    "requirements": {
+      "title": "Reikalavimai",
+      "body": "Reikia Node.js 24 ar naujesnės versijos, laisvos vietos diske bei tame pačiame tinkle pasiekiamų kompiuterio ir televizoriaus. Automatinis paskyros aptikimas veikia su Stremio 5 macOS sistemoje. Linux ir Windows naudoja rankinį priedų sąrašą. Pagrindiniai įrenginiai: Android TV, Google TV ir Fire TV; kitiems klientams gali reikėti HTTPS ir suderinamų kodekų."
+    },
+    "setup": {
+      "title": "Serverio diegimas",
+      "body": "macOS sistemoje prisijunkite prie Stremio 5 televizoriaus paskyra. Linux arba Windows paleiskite npm run setup, įrašykite sukonfigūruotus manifestų URL į sources faile config.json ir nustatykite autoDiscoverAddons į false. Visose trijose sistemose paleiskite npm run install:service. Serveris įsijungs ir bus automatiškai paleidžiamas prisijungus per LaunchAgent, systemd arba užduočių planuoklį. Stremio gali likti uždarytas."
+    },
+    "connect": {
+      "title": "Televizoriaus prijungimas",
+      "body": "Atverkite state/status-url.txt adresą, pasirinkite kalbą ir Įdiegti į Stremio arba įklijuokite priedo adresą į diegimo lauką. Televizoriuje naudokite tą pačią paskyrą ir atnaujinkite priedus arba paleiskite Stremio iš naujo. Filmui ar serijai pasirinkite Vietinę talpyklą. Pradiniai šaltiniai vis dar naudoja juos atveriantį įrenginį. Paskyros sąrašas sinchronizuojamas kas 60 sekundžių."
+    },
+    "limits": {
+      "title": "Talpykla ir peržiūra",
+      "body": "Atsisiuntimai tęsiasi uždarius grotuvą ir atnaujinami po serverio paleidimo iš naujo. Atsisiunčiamas tik pasirinktas failas. Numatytos vertės: 100 GiB talpykla ir 10 GiB laisvos vietos rezervas; užbaigti, retai naudojami torrentai šalinami prireikus vietos. Pradžia priklauso nuo dalyvių ir tinklo. Vaizdas neperkoduojamas, jį dekoduoja televizorius. Laikykite kompiuterį budrų ir pasiekiamą. Pasikeitus IP atnaujinkite baseUrl ir įdiekite priedą iš naujo."
+    },
+    "privacy": {
+      "title": "Privatumas ir licencija",
+      "body": "Adrese yra privatus prieigos raktas: neviešinkite jo problemų pranešimuose ar ekrano kopijose. macOS skaito esamą profilį ir siunčia seanso raktą tik oficialiai Stremio API, nesaugodamas kopijos. Priedų adresai saugomi privačiai. Nėra medijos katalogo ar telemetrijos. Tinklo dalyviai gali matyti kompiuterio IP. Naudokite turinį, kurį galite teisėtai pasiekti. MIT-PoU automatizuotoms sistemoms reikalauja naudojimo registravimo ir šaltinio nurodymo."
+    }
+  },
+  "errors": {
+    "invalidRange": "Netinkamas baitų intervalas.",
+    "invalidSource": "Netinkamas šaltinis.",
+    "invalidTorrent": "Netinkamas torrentas.",
+    "metadataTimeout": "Nepavyko gauti torrento metaduomenų. Bandykite kitą šaltinį.",
+    "unsafePath": "Netinkamas failo kelias.",
+    "missingVideo": "Vaizdo failas nerastas.",
+    "cacheFull": "Talpykla pilna arba kompiuteryje trūksta laisvos vietos.",
+    "noDisk": "Nepakanka laisvos vietos diske.",
+    "notFound": "Nerasta.",
+    "invalidMethod": "Netinkamas metodas."
+  }
+}
