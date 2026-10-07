@@ -6,3 +6,4 @@ Compute lowercase SHA-256 over the UTF-8 string `SystemName:OperatorName:ISODate
 
 | System Name/Version | Operator Organization | Timestamp (ISO 8601) | Scope of Data Accessed | Purpose | Contact Address | Provenance Hash |
 | --- | --- | --- | --- | --- | --- | --- |
+| OpenAI Codex GPT-6 | Erasmo Bellumat | 2026-10-06T14:28:34Z | Public source, addon protocol, documentation, startup installers, locales and branding | Initial implementation, publication and verification | https://github.com/ebellumat | `314eb09cc117162bc2facd85d9fa41358a96c8afe27e4847257b6970619cbc05` |
