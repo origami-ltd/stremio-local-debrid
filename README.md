@@ -105,10 +105,14 @@ The generated `config.json` is private and ignored by Git. [config.json.example]
 | `language` | Default locale, such as `pt-BR` or `en-US` |
 | `defaultTrackers` | Optional fallback trackers for public torrents |
 | `preventSleep` | macOS idle-sleep prevention during activity |
+| `streamingOnly` | When enabled, pauses incomplete torrent downloads after playback becomes idle. Defaults to `false`. |
+| `streamingIdleMs` | Idle time before pausing downloads in streaming-only mode, in milliseconds. Defaults to `120000`. |
 
 After changing configuration or updating the code, rerun `npm ci` and `npm run install:service` to copy the update to the runtime and restart it. This preserves the token and existing runtime state. If the computer's IP changes, update `baseUrl`, reinstall the service and reinstall the addon in Stremio. A DHCP reservation on the router keeps the address stable. Router port forwarding is not needed.
 
 The protected dashboard shows cached files and detected addons. `downloads.json` and `sources.json` beside the private manifest provide JSON status. A language-specific manifest uses `/<private-token>/<locale>/manifest.json`; the original URL continues to use the configured default language.
+
+When streamingOnly is enabled, incomplete downloads are paused after the configured idle timeout, without deleting cached data. Opening the video again resumes the download. Paused downloads do not automatically resume after restarting the server. The default behavior remains unchanged.
 
 ## Troubleshooting
 
