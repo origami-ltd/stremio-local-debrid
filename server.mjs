@@ -170,7 +170,7 @@ export async function createService(config, options = {}) {
   const listDownloads = () => [...jobs.values()].map(job => {
     const entry = entries.get(job.infoHash);
     const file = entry?.torrent?.files[job.fileIdx];
-    const downloaded = file?.done || job.status === 'complete' ? job.length : Math.max(0, file?.downloaded || 0);
+    const downloaded = file?.done || job.status === 'complete' ? job.length : Math.max(0, file?.downloaded ?? job.downloaded ?? 0);
     return { filename: job.filename, status: file?.done ? 'complete' : job.status, bytes: job.length, downloaded, progress: job.length ? downloaded / job.length : 0, peers: entry?.torrent?.numPeers || 0, speed: entry?.torrent?.downloadSpeed || 0, path: job.path, error: job.error };
   });
   const defaults = translation(config.language);
@@ -300,6 +300,7 @@ export async function createService(config, options = {}) {
             for (const index of entry.selected) {
               const job = jobs.get(`${hash}:${index}`);
               if (job?.status === 'downloading') {
+                job.downloaded = Math.max(0, entry.torrent.files[index].downloaded || 0);
                 job.status = 'paused';
                 changed = true;
               }

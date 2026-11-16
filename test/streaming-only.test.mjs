@@ -42,6 +42,7 @@ test('streaming-only: pausa, riavvio e ripresa', async () => {
           type: 'video/mp4',
           length: 1024,
           done: false,
+          downloaded: 512,
           select() {},
           createReadStream() {
             return Readable.from([Buffer.from('x')]);
@@ -85,11 +86,13 @@ test('streaming-only: pausa, riavvio e ripresa', async () => {
 
     assert.equal(service.client.torrents.length, 0);
     assert.equal(service.listDownloads()[0].status, 'paused');
+    assert.equal(service.listDownloads()[0].downloaded, 512);
 
     const saved = JSON.parse(await readFile(
       join(config.stateDir, 'downloads.json'), 'utf8'
     ));
     assert.equal(saved[0].status, 'paused');
+    assert.equal(saved[0].downloaded, 512);
 
     await service.close();
     service = null;
@@ -97,6 +100,7 @@ test('streaming-only: pausa, riavvio e ripresa', async () => {
     service = await start();
     assert.equal(service.client.torrents.length, 0);
     assert.equal(service.listDownloads()[0].status, 'paused');
+    assert.equal(service.listDownloads()[0].downloaded, 512);
 
     await play();
     assert.equal(service.client.torrents.length, 1);
