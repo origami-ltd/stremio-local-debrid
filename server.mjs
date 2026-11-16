@@ -294,7 +294,17 @@ export async function createService(config, options = {}) {
           if (job && file.done && job.status !== 'complete') { job.status = 'complete'; delete job.error; changed = true; }
         }
         const complete = [...entry.selected].every(index => entry.torrent.files[index].done);
-        if (!entry.readers && complete && Date.now() - entry.lastAccess > (config.idleReleaseMs || 60000)) {
+        const idleMs = config.streamingOnly ? (config.streamingIdleMs ?? 120000) : (config.idleReleaseMs || 60000);
+        if (!entry.readers && (complete || config.streamingOnly) && Date.now() - entry.lastAccess > idleMs) {
+          if (config.streamingOnly && !complete) {
+            for (const index of entry.selected) {
+              const job = jobs.get(`${hash}:${index}`);
+              if (job?.status === 'downloading') {
+                job.status = 'paused';
+                changed = true;
+              }
+            }
+          }
           await new Promise(done => client.remove(entry.torrent, { destroyStore: false }, () => done()));
           entries.delete(hash);
         }
@@ -318,9 +328,17 @@ export async function createService(config, options = {}) {
   timer.unref();
   await new Promise((done, reject) => { server.once('error', reject); server.listen(config.port, config.host, done); });
   if (config.port === 0) config.baseUrl = `http://${config.host}:${server.address().port}`;
+  let pausedAtStartup = false;
   for (const job of jobs.values()) {
-    if (job.status === 'downloading') void selectFile(job, true).catch(error => { job.status = 'error'; job.error = error.message; void persist(); });
+    if (job.status !== 'downloading') continue;
+    if (config.streamingOnly) {
+      job.status = 'paused';
+      pausedAtStartup = true;
+      continue;
+    }
+    void selectFile(job, true).catch(error => { job.status = 'error'; job.error = error.message; void persist(); });
   }
+  if (pausedAtStartup) await persist();
   return { server, client, manifest, playURL, getStreams, listDownloads, maintenance, addonSources, async close() {
     closing = true;
     updateSleep();
