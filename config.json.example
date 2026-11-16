@@ -11,5 +11,7 @@
   "addonRefreshMs": 60000,
   "preventSleep": false,
   "language": "en-US",
-  "sources": []
+  "sources": [],
+  "streamingOnly": false,
+  "streamingIdleMs": 120000
 }
