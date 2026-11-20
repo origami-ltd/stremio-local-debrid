@@ -1,7 +1,7 @@
 import http from 'node:http';
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import { mkdir, readFile, writeFile, rename, rm, statfs } from 'node:fs/promises';
-import { resolve, join, sep } from 'node:path';
+import { resolve, join, sep, extname } from 'node:path';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { fileURLToPath } from 'node:url';
@@ -14,7 +14,12 @@ import { renderDashboard, renderGuide } from './ui.mjs';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 const validHash = /^[a-f0-9]{40}$/i;
-const videoExtension = /\.(mkv|mp4|m4v|avi|webm|mov|ts|m2ts)$/i;
+const mediaTypes = Object.freeze({
+  '.mkv': 'video/x-matroska', '.mp4': 'video/mp4', '.m4v': 'video/mp4',
+  '.avi': 'video/x-msvideo', '.webm': 'video/webm', '.mov': 'video/quicktime',
+  '.ts': 'video/mp2t', '.m2ts': 'video/mp2t'
+});
+const mediaType = filename => mediaTypes[extname(filename).toLowerCase()];
 const fault = (status, message) => Object.assign(new Error(message), { status });
 
 export function byteRange(header, size) {
@@ -147,9 +152,9 @@ export async function createService(config, options = {}) {
       entry.lastAccess = Date.now();
       const torrent = entry.torrent;
       const file = descriptor.fileIdx == null
-        ? torrent.files.filter(file => videoExtension.test(file.name) && !/\bsample\b/i.test(file.name)).sort((a, b) => b.length - a.length)[0]
+        ? torrent.files.filter(file => mediaType(file.name) && !/\bsample\b/i.test(file.name)).sort((a, b) => b.length - a.length)[0]
         : torrent.files[descriptor.fileIdx];
-      if (!file || file.length === 0) throw fault(404, 'missingVideo');
+      if (!file || file.length === 0 || !mediaType(file.name)) throw fault(404, 'missingVideo');
       const fileIdx = torrent.files.indexOf(file);
       if (download) {
         const key = `${entry.infoHash}:${fileIdx}`;
@@ -213,6 +218,8 @@ export async function createService(config, options = {}) {
   const json = (res, status, data) => { res.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(data)); };
   const server = http.createServer(async (req, res) => {
     let t = translation(config.language);
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Range, Content-Type');
@@ -237,6 +244,10 @@ export async function createService(config, options = {}) {
         return;
       }
       if (path[1] === 'play' && path[2]) {
+        // No script or same-origin privileges for torrent content, including
+        // files with a misleading video extension. Native media documents need
+        // media-src to fetch their video; all other content defaults to none.
+        res.setHeader('Content-Security-Policy', "sandbox; default-src 'none'; media-src 'self'");
         const descriptor = decode(path[2]);
         const { entry, file } = await selectFile(descriptor, false);
         let range;
@@ -244,7 +255,7 @@ export async function createService(config, options = {}) {
         catch (error) { res.setHeader('Content-Range', `bytes */${file.length}`); throw error; }
         if (res.destroyed) return;
         if (req.method === 'GET') await selectFile(descriptor, true);
-        res.setHeader('Content-Type', file.type);
+        res.setHeader('Content-Type', mediaType(file.name));
         res.setHeader('Accept-Ranges', 'bytes');
         res.setHeader('Content-Length', range.end - range.start + 1);
         res.setHeader('Content-Disposition', `inline; filename*=UTF-8''${encodeURIComponent(file.name)}`);
